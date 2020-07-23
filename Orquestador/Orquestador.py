@@ -8,14 +8,14 @@ class Orquestador:
             Gui.desplegarInformacion()
             Gui.recibirInformacion()
         except Exception:
-            print("No encontrado GUI")
+            pass
         # Se intenta cargar el core
         try:
             from back.Core import Core
 
             Core.quienSoy()
         except Exception:
-            print("No encontrado Core")
+            pass
 
     def main():
         Orquestador.mostrar()
