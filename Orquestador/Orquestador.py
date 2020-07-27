@@ -1,26 +1,17 @@
+from api.IRegla import IRegla
+from api.IEntrada import IEntrada
+from api.ISalida import ISalida
+
+
 class Orquestador:
-    def mostrar():
+    def mostrar(self):
 
-        # Se intenta cargar la GUI
-        try:
-            from front.Gui import Gui
-
-            Gui.desplegarInformacion()
-            Gui.recibirInformacion()
-        except Exception:
-            pass
-        # Se intenta cargar el core
-        try:
-            from back.Core import Core
-
-            Core.quienSoy()
-        except Exception:
-            pass
-
-    def main():
-        Orquestador.mostrar()
+        IEntrada.recibirInformacion()
+        ISalida.desplegarInformacion()
+        IRegla.verificarReglas()
 
 
 # Ejecucion del main, el punto de inicio en otras palabras
 if __name__ == "__main__":
-    Orquestador.main()
+    orq = Orquestador()
+    orq.mostrar()
