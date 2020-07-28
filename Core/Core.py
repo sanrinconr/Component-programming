@@ -1,3 +1,3 @@
 class Core:
-    def quienSoy():
+    def verificarReglas():
         print("Soy " + Core.__name__)
