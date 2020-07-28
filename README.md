@@ -12,7 +12,7 @@ python3 despliegeProduccion.py
 Ahora tan solo resta entrar a la carpeta Produccion y ejecutar el main que se encuentra en Orquestador.pyc
 
 ```sh
-python3 Orquestador.py
+python3 Orquestador.pyc
 ```
 
 ## Como editar el codigo
@@ -20,7 +20,7 @@ Ya que cada componente se encuentra aislado es necesario desplegarlos y "acoplar
 ```sh
 python3 desplegarDesarrollo.py
 ```
-Una vez realizado el despliegue en Orquestador/ se tienen todos los binarios de los componentes y el archivo Orquestador.py listo para usar los componentes como se desee
+Una vez realizado el despliegue en Orquestador/ se tienen todos los binarios de los componentes y el archivo Orquestador.py listo para usar los componentes como se desee.
 
 ### Modificar los componentes
 En caso de querer modificar el funcionamiento de los componentes se debe ir al respectivo componente modificarlo y volver a desplegar con desplegarDesarrollo.py para actualizar los binarios
