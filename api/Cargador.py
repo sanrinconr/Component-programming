@@ -15,6 +15,7 @@ class Cargador:
             # Se importa y se agrega a las clases disponibles de cargador
             for archivo in listaArch:
                 Cargador.agregarClase(Cargador.import_from(directorio, archivo))
+        Cargador.agregarClase(Cargador.import_from(".", "Orquestador"))
 
     def agregarClase(clase):
         Cargador.clases.append(clase)
@@ -29,7 +30,10 @@ class Cargador:
 
         archivo = archivo.strip(".pyc")
         # Se importa el paquete
-        imp = import_module(seccion + "." + archivo)
+        if seccion != ".":
+            imp = import_module(seccion + "." + archivo)
+        else:
+            imp = import_module(archivo)
         # Se obtiene la instancia de la clase
         clase = getattr(imp, archivo)
         return clase
