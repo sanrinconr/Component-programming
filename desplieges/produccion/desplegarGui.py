@@ -23,3 +23,6 @@ for parent, dirnames, filenames in os.walk(destino):
 
 for compilado in glob.glob(origen + "/*.pyc"):
     shutil.move(compilado, destino)
+
+# Movimiento de templates
+copy_tree(origen + "/templates", destino + "templates/")

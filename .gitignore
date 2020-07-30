@@ -1,3 +1,6 @@
 __pycache__
 *.pyc
 ./Produccion
+Orquestador/api
+Orquestador/front
+Orquestador/back

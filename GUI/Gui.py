@@ -1,6 +1,13 @@
-class Gui:
-    def desplegarInformacion():
-        print("Soy salida " + Gui.__name__)
+from flask import Flask, render_template
 
-    def recibirInformacion():
-        print("Soy entrada " + Gui.__name__)
+
+class Gui:
+
+    app = Flask(__name__)
+
+    @app.route("/")
+    def holis():
+        return render_template("pruebilla.html")
+
+    def iniciar():
+        Gui.app.run()

@@ -8,14 +8,7 @@ class Orquestador:
     def mostrar(self):
         Cargador.importDinamico()
 
-        if IEntrada.existeInstancia():
-            IEntrada.recibirInformacion()
-
-        if ISalida.existeInstancia():
-            ISalida.desplegarInformacion()
-
-        if IRegla.existeInstancia():
-            IRegla.verificarReglas()
+        ISalida.iniciarGui()
 
 
 # Ejecucion del main, el punto de inicio en otras palabras
