@@ -9,9 +9,9 @@ class Gui:
     app = Flask(__name__)
 
     @app.route("/")
-    def horario():
+    def index():
         return render_template(
-            "pruebilla.html", variables=["a1", "a2", Gui.validarUsuario("a", "a")]
+            "inde.html", variables=["a1", "a2", Gui.validarUsuario("a", "a")]
         )
 
     @app.route("/login")
