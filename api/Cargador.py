@@ -1,6 +1,6 @@
 from os import listdir
 from importlib import import_module
-from os import scandir, getcwd
+from os import scandir, getcwd, path
 
 
 class Cargador:
@@ -37,10 +37,13 @@ class Cargador:
         # Se obtiene la instancia de la clase
         clase = getattr(imp, archivo)
         return clase
-
-    def ls(ruta=getcwd()):
+    
+    def test():
+        print(path.join(getcwd(),"back"))
+    def ls(ruta):
         archivos = []
-        for arch in scandir(ruta):
+
+        for arch in scandir(path.join(getcwd(),ruta)):
             if arch.is_file():
                 if ".pyc" in arch.name:
                     archivos.append(arch.name)

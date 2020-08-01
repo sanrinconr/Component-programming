@@ -6,6 +6,7 @@ from api.Cargador import Cargador
 
 class Orquestador:
     def mostrar(self):
+        #Cargador.test()
         Cargador.importDinamico()
         ISalida.iniciarGui()
 
