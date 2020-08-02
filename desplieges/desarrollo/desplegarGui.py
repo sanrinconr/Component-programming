@@ -27,3 +27,4 @@ for compilado in glob.glob(origen + "/*.pyc"):
 
 # Movimiento de templates
 copy_tree(origen + "/templates", destino + "templates/")
+copy_tree(origen + "/static", destino + "static/")
