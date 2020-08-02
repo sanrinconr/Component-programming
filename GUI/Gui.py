@@ -11,16 +11,24 @@ class Gui:
     @app.route("/")
     def index():
         return render_template(
-            "inde.html", variables=["a1", "a2", Gui.validarUsuario("a", "a")]
+            "index.html"
         )
 
-    @app.route("/login")
-    def login():
-        return render_template("login.html")
+    @app.route("/iniciarSesion")
+    def iniciarSesion():
+        return render_template("iniciarSesion.html")
+
+    @app.route("/registrarse")
+    def registrarse():
+        return render_template("registrarse.html")
 
     @app.route("/login/validarLogin")
     def validarUsuario(user=None, contrasena=None):
         return IUsuarioSalida.validarUsuario(user, contrasena)
+
+    @app.route("/vistaPrincipal")
+    def vistaPrincipal():
+        return render_template("vistaPrincipal.html")
 
     def iniciar():
         Gui.app.run()
