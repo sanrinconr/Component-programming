@@ -10,9 +10,7 @@ class Gui:
 
     @app.route("/")
     def index():
-        return render_template(
-            "index.html"
-        )
+        return render_template("index.html")
 
     @app.route("/iniciarSesion")
     def iniciarSesion():
@@ -31,4 +29,4 @@ class Gui:
         return render_template("vistaPrincipal.html")
 
     def iniciar():
-        Gui.app.run()
+        Gui.app.run(debug=True)
