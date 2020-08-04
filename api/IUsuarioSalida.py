@@ -11,4 +11,4 @@ class IUsuarioSalida:
         )
 
     def eliminarMateria(nombre):
-        return Cargador.getInstancia("Orquestador").agregarMateria(nombre)
+        return Cargador.getInstancia("Orquestador").eliminarMateria(nombre)
