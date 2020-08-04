@@ -4,4 +4,7 @@ class Core:
 
     def validarUsuario(usuario, contrasena):
         ##Aqui el core hace la llamada a la DB
-        return False
+        return "No es posible validar, no hay base de datos"
+
+    def agregarMateria(nombre, descripcion, horaIncio, horaFinal):
+        return "No agregada, falta base de datos"

@@ -6,12 +6,17 @@ from api.Cargador import Cargador
 
 class Orquestador:
     def mostrar(self):
-        #Cargador.test()
+        # Cargador.test()
         Cargador.importDinamico()
         ISalida.iniciarGui()
 
     def validarUsuario(usuario, contrasena):
         return IUsuarioEntrada.validarUsuario(usuario, contrasena)
+
+    def agregarMateria(nombre, descripcion, horaInicio, horaFinal):
+        return IUsuarioEntrada.agregarMateria(
+            nombre, descripcion, horaInicio, horaFinal
+        )
 
 
 # Ejecucion del main, el punto de inicio en otras palabras
