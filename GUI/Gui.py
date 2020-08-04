@@ -9,6 +9,12 @@ from flask import request
 # Para hacer mas entendibles las salidas de la app
 from flask import jsonify
 
+# Implementacion de las sesiones
+from flask import Flask, session
+
+# redireccionar
+from flask import Flask, redirect, url_for
+
 
 class Gui:
 
@@ -35,7 +41,13 @@ class Gui:
     # Vista de gestion donde el usuario podra organizar su horario
     @app.route("/vistaPrincipal")
     def vistaPrincipal():
-        return render_template("vistaPrincipal.html")
+        try:
+            # Se intenta obtener la variable usuario
+            usuario = session["usuario"]
+            return render_template("vistaPrincipal.html")
+        except:
+            # Si no existe entonces se retorna al login
+            return redirect(url_for("iniciarSesion"))
 
     ###########################################################
     ##################################LOGICA###################
@@ -48,7 +60,22 @@ class Gui:
         contrasena = request.args.get("contrasena")
         valido = str(IUsuarioSalida.validarUsuario(user, contrasena))
         salida = {"usuario": user, "valido": valido}
+        print(salida)
+        if valido == "True":
+            session.clear()
+            session["usuario"] = user
+
+        else:
+            session.clear()
         return jsonify(salida)
+
+    @app.route("/vistaPrincipal/cerrarSesion")
+    def cerrarSesion():
+        try:
+            session.clear()
+            return str(True)
+        except:
+            return str(False)
 
     # Se le pide al orquestador que agrege una nueva materia
     @app.route("/vistaPrincipal/agregarMateria")
@@ -82,4 +109,5 @@ class Gui:
 
     # Punto de entrada
     def iniciar():
+        Gui.app.secret_key = "1234"
         Gui.app.run(debug=True)
