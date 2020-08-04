@@ -69,6 +69,17 @@ class Gui:
         }
         return jsonify(salida)
 
+    # Se le pide al orquestador que elimine una materia
+    @app.route("/vistaPrincipal/eliminarMateria")
+    def eliminarMateria(nombre=None):
+        nombre = request.args.get("nombre")
+        seElimino = str(IUsuarioSalida.eliminarMateria(nombre))
+        salida = {
+            "nombre": nombre,
+            "eliminada": seElimino,
+        }
+        return jsonify(salida)
+
     # Punto de entrada
     def iniciar():
         Gui.app.run(debug=True)

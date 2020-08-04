@@ -18,6 +18,9 @@ class Orquestador:
             nombre, descripcion, horaInicio, horaFinal
         )
 
+    def eliminarMateria(nombre):
+        return IUsuarioEntrada.eliminarMateria(nombre)
+
 
 # Ejecucion del main, el punto de inicio en otras palabras
 if __name__ == "__main__":

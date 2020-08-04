@@ -8,3 +8,6 @@ class Core:
 
     def agregarMateria(nombre, descripcion, horaIncio, horaFinal):
         return "No agregada, falta base de datos"
+
+    def eliminarMateria(nombre):
+        return "No eliminada, no hay base de datos"

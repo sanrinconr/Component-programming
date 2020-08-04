@@ -9,3 +9,6 @@ class IUsuarioSalida:
         return Cargador.getInstancia("Orquestador").agregarMateria(
             nombre, descripcion, horaInicio, horaFinal
         )
+
+    def eliminarMateria(nombre):
+        return Cargador.getInstancia("Orquestador").agregarMateria(nombre)

@@ -9,3 +9,6 @@ class IUsuarioEntrada:
         return Cargador.getInstancia("Core").agregarMateria(
             nombre, descripcion, horaInicio, horaFinal
         )
+
+    def eliminarMateria(nombre):
+        return Cargador.getInstancia("Core").eliminarMateria(nombre)
