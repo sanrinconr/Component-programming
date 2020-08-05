@@ -6,14 +6,18 @@ $(function() {
     $.ajax({
       url: '/login/validarLogin',
       type: 'GET',
-      data: {user: "test",
+      data: {usuario: "test",
             contrasena:"test"
             },
       success: function(data) {
     	//called when successful
-    	alert(data.valido)
+      if(data.valido == "True"){
+        location.href = '/vistaPrincipal';
+      }else{
+    	alert("Credenciales invalidas")
+      }
       //Dependiendo de lo que salga aqui toca redireccionar o no
-  
+
       },
       error: function(e) {
     	//called when there is an error
