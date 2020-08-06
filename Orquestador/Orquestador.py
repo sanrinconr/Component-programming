@@ -1,7 +1,10 @@
-from api.ISalida import ISalida
-from api.IUsuarioEntrada import IUsuarioEntrada
+import sys
 
-from api.Cargador import Cargador
+##Se establece que va a importar del zip
+sys.path.append("api/Api.zip")
+from ISalida import ISalida
+from IUsuarioEntrada import IUsuarioEntrada
+from Cargador import Cargador
 
 
 class Orquestador:

@@ -1,4 +1,7 @@
-from api.Cargador import Cargador
+import sys
+
+sys.path.append("Api.zip")
+from Cargador import Cargador
 
 
 class ISalida:
@@ -6,6 +9,7 @@ class ISalida:
         Cargador.getInstancia("Gui").desplegarInformacion()
 
     def iniciarGui():
+        Cargador.getInstancia("Gui").extraerNecesarios()
         Cargador.getInstancia("Gui").iniciar()
 
     def existeInstancia():

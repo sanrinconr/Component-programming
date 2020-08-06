@@ -1,4 +1,7 @@
-from api.Cargador import Cargador
+import sys
+
+sys.path.append("Api.zip")
+from Cargador import Cargador
 
 ##COMUNICACION DE LA GUI HACIA EL ORQUESTADOR
 class IUsuarioSalida:
