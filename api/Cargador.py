@@ -1,6 +1,7 @@
 from os import listdir
 from importlib import import_module
 from os import scandir, getcwd, path
+import sys
 
 
 class Cargador:
@@ -28,23 +29,19 @@ class Cargador:
 
     def import_from(seccion, archivo):
 
-        archivo = archivo.strip(".pyc")
+        sys.path.append(path.join(seccion, archivo))
+        archivo = archivo.replace(".zip", "")
         # Se importa el paquete
-        if seccion != ".":
-            imp = import_module(seccion + "." + archivo)
-        else:
-            imp = import_module(archivo)
+        imp = import_module(archivo)
         # Se obtiene la instancia de la clase
         clase = getattr(imp, archivo)
         return clase
-    
-    def test():
-        print(path.join(getcwd(),"back"))
+
     def ls(ruta):
         archivos = []
 
-        for arch in scandir(path.join(getcwd(),ruta)):
+        for arch in scandir(path.join(getcwd(), ruta)):
             if arch.is_file():
-                if ".pyc" in arch.name:
+                if ".zip" in arch.name:
                     archivos.append(arch.name)
         return archivos

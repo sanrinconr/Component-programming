@@ -1,5 +1,3 @@
-from api.IUsuarioSalida import IUsuarioSalida
-
 # Dependencias web
 from flask import Flask, render_template
 
@@ -15,14 +13,31 @@ from flask import Flask, session
 # redireccionar
 from flask import Flask, redirect, url_for
 
+# Gestion de zip
+import zipfile
+
+##Se establece que va a importar del zip la api
+import sys
+import os
+
+sys.path.append("api/Api.zip")
+from IUsuarioEntrada import IUsuarioEntrada
+from IUsuarioSalida import IUsuarioSalida
+
 
 class Gui:
 
-    app = Flask(__name__)
+    # Se define la ruta personalizada de las templates
+    # las que se descomprimen del zip
+    app = Flask(
+        __name__,
+        template_folder=os.path.abspath("front/__web__/GUI/templates/"),
+        static_folder=os.path.abspath("front/__web__/GUI/static/"),
+    )
 
-    ######VISTAS#############################
-    #########################################3
-    #########################################
+    ################VISTAS####################
+    ##########################################
+    ##########################################
     # Vista de entrada, cualquiera puede verla
     @app.route("/")
     def index():
@@ -106,6 +121,10 @@ class Gui:
             "eliminada": seElimino,
         }
         return jsonify(salida)
+
+    def extraerNecesarios():
+        with zipfile.ZipFile("front/Gui.zip", "r") as zip_ref:
+            zip_ref.extractall("front/__web__/")
 
     # Punto de entrada
     def iniciar():
