@@ -13,7 +13,7 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"></script>
    <!-- App favicon -->
-   <link rel="shortcut icon" href="assets/images/favicon.ico">
+   <link rel="shortcut icon" href="{{ url_for('static', filename='img/calendario.png') }}">
 
    <!-- third party css -->
    <link href="{{ url_for('static', filename='vistaPrincipal/css/fullcalendar.min.css') }}" rel="stylesheet"
@@ -40,35 +40,33 @@
          <!-- LOGO -->
          <a href="index.html" class="logo text-center logo-light">
             <span class="logo-lg">
-               <img src="assets/images/logo.png" alt="" height="16">
+               <img src="{{ url_for('static', filename='img/calendario.png') }}" alt="" height="30"> Horarios
             </span>
             <span class="logo-sm">
-               <img src="assets/images/logo_sm.png" alt="" height="16">
+               <img src="{{ url_for('static', filename='img/calendario.png') }}" alt="" height="16"> Horarios
             </span>
          </a>
 
          <!-- LOGO -->
-         <a href="index.html" class="logo text-center logo-dark">
+         <!-- <a href="index.html" class="logo text-center logo-dark">
             <span class="logo-lg">
                <img src="assets/images/logo-dark.png" alt="" height="16">
             </span>
             <span class="logo-sm">
                <img src="assets/images/logo_sm_dark.png" alt="" height="16">
             </span>
-         </a>
+         </a> -->
 
          <div class="h-100" id="left-side-menu-container" data-simplebar>
 
             <!--- Sidemenu -->
             <ul class="metismenu side-nav">
 
-
-
                <li class="side-nav-title side-nav-item">App</li>
 
                <li class="side-nav-item">
-                  <a href="apps-calendar.html" class="side-nav-link">
-                     <i class="uil-calender"></i>
+                  <a href="#" class="side-nav-link">
+                     <i ><img src="{{ url_for('static', filename='vistaPrincipal/img/calendario.svg') }}" alt="" height="20"></i>
                      <span> Calendario </span>
                   </a>
                </li>
@@ -123,14 +121,14 @@
 
                <li class="side-nav-item">
                   <a href="apps-social-feed.html" class="side-nav-link">
-                     <i class="uil-rss"></i>
+                     <i ><img src="{{ url_for('static', filename='vistaPrincipal/img/socialMedia.svg') }}" alt="" height="20"></i>
                      <span> Social Media </span>
                   </a>
                </li>
 
                <li class="side-nav-item">
                   <a href="javascript: void(0);" class="side-nav-link">
-                     <i class="uil-clipboard-alt"></i>
+                     <i ><img src="{{ url_for('static', filename='vistaPrincipal/img/tareas.svg') }}" alt="" height="20"></i>
                      <span> Tareas </span>
                      <span class="menu-arrow"></span>
                   </a>
@@ -148,7 +146,7 @@
 
                <li class="side-nav-item">
                   <a href="javascript: void(0);" class="side-nav-link">
-                     <i class="uil-location-point"></i>
+                     <i ><img src="{{ url_for('static', filename='vistaPrincipal/img/mapa.svg') }}" alt="" height="20"></i>
                      <span> Mapas </span>
                      <span class="menu-arrow"></span>
                   </a>
@@ -198,7 +196,8 @@
                   <li class="dropdown notification-list">
                      <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
                         aria-haspopup="false" aria-expanded="false">
-                        <i class="dripicons-bell noti-icon"></i>
+                        <i class="noti-icon"><img src="{{ url_for('static', filename='vistaPrincipal/img/notificacion.svg') }}" alt="" height="20"></i>
+   
                         <span class="noti-icon-badge"></span>
                      </a>
                      <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-lg">
@@ -308,7 +307,7 @@
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                           <i class="mdi mdi-account-circle mr-1"></i>
+                           <i class="mdi  mr-1"><img src="{{ url_for('static', filename='vistaPrincipal/img/miCuenta.svg') }}" alt="" height="13"></i>
                            <span>Mi Cuenta</span>
                         </a>
 
@@ -320,13 +319,13 @@
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                           <i class="mdi mdi-lifebuoy mr-1"></i>
+                           <i class="mdi mr-1"><img src="{{ url_for('static', filename='vistaPrincipal/img/ayuda.svg') }}" alt="" height="13"></i>
                            <span>Ayuda</span>
                         </a>
 
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
-                           <i class="mdi mdi-logout mr-1"></i>
+                           <i class="mdi mr-1"><img src="{{ url_for('static', filename='vistaPrincipal/img/salir.svg') }}" alt="" height="13"></i>
                            <span>Cerrar Sesion</span>
                         </a>
 
@@ -341,7 +340,7 @@
                   <form>
                      <div class="input-group">
                         <input type="text" class="form-control dropdown-toggle" placeholder="Buscar..." id="top-search">
-                        <span class="mdi mdi-magnify search-icon"></span>
+                        <span class="mdi search-icon"><img src="{{ url_for('static', filename='vistaPrincipal/img/buscar.svg') }}" alt="" height="20"></span>
                         <div class="input-group-append">
                            <button class="btn btn-primary" type="submit">Buscar</button>
                         </div>
@@ -365,7 +364,7 @@
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                            <div class="media">
-                              <img class="d-flex mr-2 rounded-circle" src="assets/images/users/avatar-2.jpg"
+                              <img class="d-flex mr-2 rounded-circle" src="{{ url_for('static', filename='vistaPrincipal/img/avatarHombre.png') }}"
                                  alt="Generic placeholder image" height="32">
                               <div class="media-body">
                                  <h5 class="m-0 font-14">Messi Perez</h5>
@@ -377,7 +376,7 @@
                         <!-- item-->
                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                            <div class="media">
-                              <img class="d-flex mr-2 rounded-circle" src="assets/images/users/avatar-5.jpg"
+                              <img class="d-flex mr-2 rounded-circle" src="{{ url_for('static', filename='vistaPrincipal/img/avatarHombre.png') }}"
                                  alt="Generic placeholder image" height="32">
                               <div class="media-body">
                                  <h5 class="m-0 font-14">Daniels Fernandez</h5>
@@ -413,22 +412,22 @@
                               <div class="col-lg-3">
                                  <a href="#" data-toggle="modal" data-target="#add-category"
                                     class="btn btn-lg font-16 btn-primary btn-block  ">
-                                    <i class="mdi mdi-plus-circle-outline"></i> Crear Nuevo Evento
+                                    <i class="mdi"><img src="{{ url_for('static', filename='vistaPrincipal/img/nuevo.png') }}" alt="" height="15"></i> Crear Nuevo Evento
                                  </a>
                                  <div id="external-events" class="m-t-20">
                                     <br>
                                     <p class="text-muted">Arrastra y suelta tu evento o haz clic en el calendario</p>
                                     <div class="external-event bg-success" data-class="bg-success">
-                                       <i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Clase
+                                       <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Clase
                                     </div>
                                     <div class="external-event bg-info" data-class="bg-info">
-                                       <i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Mi evento
+                                       <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Mi evento
                                     </div>
                                     <div class="external-event bg-warning" data-class="bg-warning">
-                                       <i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Reunion
+                                       <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Reunion
                                     </div>
                                     <div class="external-event bg-danger" data-class="bg-danger">
-                                       <i class="mdi mdi-checkbox-blank-circle mr-2 vertical-middle"></i>Comida
+                                       <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Comida
                                     </div>
                                  </div>
 
