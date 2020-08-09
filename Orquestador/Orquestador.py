@@ -16,13 +16,16 @@ class Orquestador:
     def validarUsuario(usuario, contrasena):
         return IUsuarioEntrada.validarUsuario(usuario, contrasena)
 
-    def agregarMateria(nombre, descripcion, horaInicio, horaFinal):
+    def agregarMateria(nombre, descripcion, horaInicio, horaFinal, color):
         return IUsuarioEntrada.agregarMateria(
-            nombre, descripcion, horaInicio, horaFinal
+            nombre, descripcion, horaInicio, horaFinal, color
         )
 
     def eliminarMateria(nombre):
         return IUsuarioEntrada.eliminarMateria(nombre)
+
+    def registrarUsuario(usuario, contrasena, email):
+        return IUsuarioEntrada.registrarUsuario(usuario, contrasena, email)
 
 
 # Ejecucion del main, el punto de inicio en otras palabras

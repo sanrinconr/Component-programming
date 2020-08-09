@@ -6,11 +6,12 @@ $(function(){
       data: {nombre: $("#inputNombreMateria").val(),
             descripcion:$("#inputDescripcionMateria").val(),
             horaInicio:$("#inputHoraInicio").val(),
-            horaFinal:$("#inputHoraFinal").val()
+            horaFinal:$("#inputHoraFinal").val(),
+            color:$("#inputColor").children("option:selected").val(),
             },
       success: function(data) {
       //called when successful
-      alert(data.nombre+"\n"+data.descripcion +"\n" +data.agregada)
+      alert(data.nombre+"\n"+data.descripcion +"\n" +data.agregada+"\n"+data.color)
       //Dependiendo de lo que salga aqui toca redireccionar o no
 
       },

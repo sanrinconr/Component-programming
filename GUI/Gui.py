@@ -68,6 +68,8 @@ class Gui:
     ##################################LOGICA###################
     ###########################################################
 
+    ###########################################################
+    ##################LOGIN###################################
     # Se le pide al orquestador que valide al usuario
     @app.route("/login/validarLogin")
     def validarUsuario(user=None, contrasena=None):
@@ -92,15 +94,42 @@ class Gui:
         except:
             return str(False)
 
+    ########################################################
+    ##################REGISTRO##############################
+    ########################################################
+
+    @app.route("/login/registrarUsuario")
+    def registrarUsuario(user=None, contrasena=None, email=None):
+        user = request.args.get("usuario")
+        contrasena = request.args.get("contrasena")
+        email = request.args.get("email")
+        registrado = str(IUsuarioSalida.registrarUsuario(user, contrasena, email))
+        salida = {"usuario": user, "email": email, "registrado": registrado}
+        if registrado == "True":
+            session.clear()
+            session["usuario"] = user
+        else:
+            session.clear()
+        return jsonify(salida)
+
+    ########################################################
+    ##################GESTOR PRINCIPAL #####################
+    ########################################################
+
     # Se le pide al orquestador que agrege una nueva materia
     @app.route("/vistaPrincipal/agregarMateria")
-    def agregarMateria(nombre=None, descripcion=None, horaInicio=None, horaFinal=None):
+    def agregarMateria(
+        nombre=None, descripcion=None, horaInicio=None, horaFinal=None, color=None
+    ):
         nombre = request.args.get("nombre")
         descripcion = request.args.get("descripcion")
         horaInicio = request.args.get("horaInicio")
         horaFinal = request.args.get("horaFinal")
+        color = request.args.get("color")
         seAgrego = str(
-            IUsuarioSalida.agregarMateria(nombre, descripcion, horaInicio, horaFinal)
+            IUsuarioSalida.agregarMateria(
+                nombre, descripcion, horaInicio, horaFinal, color
+            )
         )
         salida = {
             "nombre": nombre,

@@ -1,54 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Vista Principal</title>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-   <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"></script>
-   <!-- App favicon -->
-   <link rel="shortcut icon" href="{{ url_for('static', filename='img/calendario.png') }}">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Vista Principal</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+      <!-- App favicon -->
+      <link rel="shortcut icon" href="{{ url_for('static', filename='img/calendario.png') }}">
 
-   <!-- third party css -->
-   <link href="{{ url_for('static', filename='vistaPrincipal/css/fullcalendar.min.css') }}" rel="stylesheet"
-      type="text/css" />
-   <!-- third party css end -->
+      <!-- third party css -->
+      <link href="{{ url_for('static', filename='vistaPrincipal/css/fullcalendar.min.css') }}" rel="stylesheet" type="text/css" />
+      <!-- third party css end -->
 
-   <!-- App css -->
-   <link href="{{ url_for('static', filename='vistaPrincipal/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-   <link href="{{ url_for('static', filename='vistaPrincipal/css/app.min.css') }}" rel="stylesheet" type="text/css"
-      id="light-style" />
-   <link href="{{ url_for('static', filename='vistaPrincipal/css/app-dark.min.css') }}" rel="stylesheet" type="text/css"
-      id="dark-style" />
-   <script src="{{ url_for('static', filename='vistaPrincipal/js/vistaPrincipal.js') }}"></script>
+      <!-- App css -->
+      <link href="{{ url_for('static', filename='vistaPrincipal/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+      <link href="{{ url_for('static', filename='vistaPrincipal/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style" />
+      <link href="{{ url_for('static', filename='vistaPrincipal/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style" />
+      <script src="{{ url_for('static', filename='vistaPrincipal/js/vistaPrincipal.js') }}"></script>
 
-</head>
+   </head>
 
-<body class="loading"
-   data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
-   <!-- Begin page -->
-   <div class="wrapper">
-      <!-- ========== Left Sidebar Start ========== -->
-      <div class="left-side-menu">
+   <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
+      <!-- Begin page -->
+      <div class="wrapper">
+         <!-- ========== Left Sidebar Start ========== -->
+         <div class="left-side-menu">
 
-         <!-- LOGO -->
-         <a href="index.html" class="logo text-center logo-light">
-            <span class="logo-lg">
-               <img src="{{ url_for('static', filename='img/calendario.png') }}" alt="" height="30"> Horarios
-            </span>
-            <span class="logo-sm">
-               <img src="{{ url_for('static', filename='img/calendario.png') }}" alt="" height="16"> Horarios
-            </span>
-         </a>
+            <!-- LOGO -->
+            <a href="index.html" class="logo text-center logo-light">
+               <span class="logo-lg">
+                  <img src="{{ url_for('static', filename='img/calendario.png') }}" alt="" height="30"> Horarios
+               </span>
+               <span class="logo-sm">
+                  <img src="{{ url_for('static', filename='img/calendario.png') }}" alt="" height="16"> Horarios
+               </span>
+            </a>
 
-         <!-- LOGO -->
-         <!-- <a href="index.html" class="logo text-center logo-dark">
+            <!-- LOGO -->
+            <!-- <a href="index.html" class="logo text-center logo-dark">
             <span class="logo-lg">
                <img src="assets/images/logo-dark.png" alt="" height="16">
             </span>
@@ -57,440 +49,424 @@
             </span>
          </a> -->
 
-         <div class="h-100" id="left-side-menu-container" data-simplebar>
+            <div class="h-100" id="left-side-menu-container" data-simplebar>
 
-            <!--- Sidemenu -->
-            <ul class="metismenu side-nav">
+               <!--- Sidemenu -->
+               <ul class="metismenu side-nav">
 
-               <li class="side-nav-title side-nav-item">App</li>
+                  <li class="side-nav-title side-nav-item">App</li>
 
-               <li class="side-nav-item">
-                  <a href="#" class="side-nav-link">
-                     <i ><img src="{{ url_for('static', filename='vistaPrincipal/img/calendario.svg') }}" alt="" height="20"></i>
-                     <span> Calendario </span>
-                  </a>
-               </li>
-
-               <li class="side-nav-item">
-                  <a href="apps-chat.html" class="side-nav-link">
-                     <i class="uil-comments-alt"></i>
-                     <span> Chat </span>
-                  </a>
-               </li>
-
-
-               <li class="side-nav-item">
-                  <a href="javascript: void(0);" class="side-nav-link">
-                     <i class="uil-envelope"></i>
-                     <span> Email </span>
-                     <span class="menu-arrow"></span>
-                  </a>
-                  <ul class="side-nav-second-level" aria-expanded="false">
-                     <li>
-                        <a href="apps-email-inbox.html">Inbox</a>
-                     </li>
-                     <li>
-                        <a href="apps-email-read.html">Read Email</a>
-                     </li>
-                  </ul>
-               </li>
-
-               <li class="side-nav-item">
-                  <a href="javascript: void(0);" class="side-nav-link">
-                     <i class="uil-briefcase"></i>
-                     <span> Proyectos </span>
-                     <span class="menu-arrow"></span>
-                  </a>
-                  <ul class="side-nav-second-level" aria-expanded="false">
-                     <li>
-                        <a href="apps-projects-list.html">Lista</a>
-                     </li>
-                     <li>
-                        <a href="apps-projects-details.html">Detailles</a>
-                     </li>
-                     <li>
-                        <a href="apps-projects-gantt.html">Gantt <span
-                              class="badge badge-pill badge-light-lighten font-10 float-right">New</span></a>
-                     </li>
-                     <li>
-                        <a href="apps-projects-add.html">Crear Projecto <span
-                              class="badge badge-pill badge-success-lighten font-10 float-right">New</span></a>
-                     </li>
-                  </ul>
-               </li>
-
-               <li class="side-nav-item">
-                  <a href="apps-social-feed.html" class="side-nav-link">
-                     <i ><img src="{{ url_for('static', filename='vistaPrincipal/img/socialMedia.svg') }}" alt="" height="20"></i>
-                     <span> Social Media </span>
-                  </a>
-               </li>
-
-               <li class="side-nav-item">
-                  <a href="javascript: void(0);" class="side-nav-link">
-                     <i ><img src="{{ url_for('static', filename='vistaPrincipal/img/tareas.svg') }}" alt="" height="20"></i>
-                     <span> Tareas </span>
-                     <span class="menu-arrow"></span>
-                  </a>
-                  <ul class="side-nav-second-level" aria-expanded="false">
-                     <li>
-                        <a href="apps-tasks.html">Lista</a>
-                     </li>
-                     <li>
-                        <a href="apps-tasks-details.html">Detalles</a>
-                     </li>
-                  </ul>
-               </li>
-
-               <li class="side-nav-title side-nav-item mt-1">Herramientas</li>
-
-               <li class="side-nav-item">
-                  <a href="javascript: void(0);" class="side-nav-link">
-                     <i ><img src="{{ url_for('static', filename='vistaPrincipal/img/mapa.svg') }}" alt="" height="20"></i>
-                     <span> Mapas </span>
-                     <span class="menu-arrow"></span>
-                  </a>
-                  <ul class="side-nav-second-level" aria-expanded="false">
-                     <li>
-                        <a href="maps-google.html">Google Maps</a>
-                     </li>
-                     <li>
-                        <a href="maps-vector.html">Vector Maps</a>
-                     </li>
-                  </ul>
-               </li>
-
-            </ul>
-            <!-- End Sidebar -->
-
-            <div class="clearfix"></div>
-
-         </div>
-         <!-- Sidebar -left -->
-
-      </div>
-      <!-- Left Sidebar End -->
-
-      <!-- ============================================================== -->
-      <!-- Start Page Content here -->
-      <!-- ============================================================== -->
-
-      <div class="content-page">
-         <div class="content">
-            <!-- Topbar Start -->
-            <div class="navbar-custom">
-               <ul class="list-unstyled topbar-right-menu float-right mb-0">
-                  <li class="dropdown notification-list d-lg-none">
-                     <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="false" aria-expanded="false">
-                        <i class="dripicons-search noti-icon"></i>
+                  <li class="side-nav-item">
+                     <a href="#" class="side-nav-link">
+                        <i><img src="{{ url_for('static', filename='vistaPrincipal/img/calendario.svg') }}" alt="" height="20"></i>
+                        <span> Calendario </span>
                      </a>
-                     <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
-                        <form class="p-3">
-                           <input type="text" class="form-control" placeholder="Search ..."
-                              aria-label="Recipient's username">
-                        </form>
-                     </div>
                   </li>
 
-                  <li class="dropdown notification-list">
-                     <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="false" aria-expanded="false">
-                        <i class="noti-icon"><img src="{{ url_for('static', filename='vistaPrincipal/img/notificacion.svg') }}" alt="" height="20"></i>
-   
-                        <span class="noti-icon-badge"></span>
+                  <li class="side-nav-item">
+                     <a href="apps-chat.html" class="side-nav-link">
+                        <i class="uil-comments-alt"></i>
+                        <span> Chat </span>
                      </a>
-                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-lg">
+                  </li>
 
-                        <!-- item-->
-                        <div class="dropdown-item noti-title">
-                           <h5 class="m-0">
-                              <span class="float-right">
-                                 <a href="javascript: void(0);" class="text-dark">
-                                    <small>Eliminar todo</small>
-                                 </a>
-                              </span>Notificaciones
-                           </h5>
-                        </div>
 
-                        <div style="max-height: 230px;" data-simplebar>
-                           <!-- item-->
-                           <a href="javascript:void(0);" class="dropdown-item notify-item">
-                              <div class="notify-icon bg-primary">
-                                 <i class="mdi mdi-comment-account-outline"></i>
-                              </div>
-                              <p class="notify-details">Caleb Flakelar commented on Admin
-                                 <small class="text-muted">1 min ago</small>
-                              </p>
-                           </a>
-
-                           <!-- item-->
-                           <a href="javascript:void(0);" class="dropdown-item notify-item">
-                              <div class="notify-icon bg-info">
-                                 <i class="mdi mdi-account-plus"></i>
-                              </div>
-                              <p class="notify-details">Nuevo usuario registrado.
-                                 <small class="text-muted">Hace 5 horas</small>
-                              </p>
-                           </a>
-
-                           <!-- item-->
-                           <a href="javascript:void(0);" class="dropdown-item notify-item">
-                              <div class="notify-icon">
-                                 <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
-                              </div>
-                              <p class="notify-details">Cristina Pride</p>
-                              <p class="text-muted mb-0 user-msg">
-                                 <small>Hola, Como estas? Que sabes sobre la siguiente clase?</small>
-                              </p>
-                           </a>
-
-                           <!-- item-->
-                           <a href="javascript:void(0);" class="dropdown-item notify-item">
-                              <div class="notify-icon bg-primary">
-                                 <i class="mdi mdi-comment-account-outline"></i>
-                              </div>
-                              <p class="notify-details">Caleb Flakelar commented on Admin
-                                 <small class="text-muted">4 days ago</small>
-                              </p>
-                           </a>
-
-                           <!-- item-->
-                           <a href="javascript:void(0);" class="dropdown-item notify-item">
-                              <div class="notify-icon">
-                                 <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
-                              </div>
-                              <p class="notify-details">Karen Robinson</p>
-                              <p class="text-muted mb-0 user-msg">
-                                 <small>Wow ! this admin looks good and awesome design</small>
-                              </p>
-                           </a>
-
-                           <!-- item-->
-                           <a href="javascript:void(0);" class="dropdown-item notify-item">
-                              <div class="notify-icon bg-info">
-                                 <i class="mdi mdi-heart"></i>
-                              </div>
-                              <p class="notify-details">Carlos Crouch liked
-                                 <b>Admin</b>
-                                 <small class="text-muted">13 days ago</small>
-                              </p>
-                           </a>
-                        </div>
-
-                        <!-- All-->
-                        <a href="javascript:void(0);"
-                           class="dropdown-item text-center text-primary notify-item notify-all">
-                           View All
-                        </a>
-
-                     </div>
-                  </li>                  
-
-                  <li class="dropdown notification-list">
-                     <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#"
-                        role="button" aria-haspopup="false" aria-expanded="false">
-                        <span class="account-user-avatar">
-                           <img src="{{ url_for('static', filename='vistaPrincipal/img/avatarHombre.png') }}" alt="user-image" class="rounded-circle">
-                        </span>
-                        <span>
-                           <span class="account-user-name">Juandita Rincon</span>
-                           <span class="account-position">Estudiante</span>
-                        </span>
+                  <li class="side-nav-item">
+                     <a href="javascript: void(0);" class="side-nav-link">
+                        <i class="uil-envelope"></i>
+                        <span> Email </span>
+                        <span class="menu-arrow"></span>
                      </a>
-                     <div
-                        class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
-                        <!-- item-->
-                        <div class=" dropdown-header noti-title">
-                           <h6 class="text-overflow m-0">Bienvenido !</h6>
-                        </div>
+                     <ul class="side-nav-second-level" aria-expanded="false">
+                        <li>
+                           <a href="apps-email-inbox.html">Inbox</a>
+                        </li>
+                        <li>
+                           <a href="apps-email-read.html">Read Email</a>
+                        </li>
+                     </ul>
+                  </li>
 
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                           <i class="mdi  mr-1"><img src="{{ url_for('static', filename='vistaPrincipal/img/miCuenta.svg') }}" alt="" height="13"></i>
-                           <span>Mi Cuenta</span>
-                        </a>
+                  <li class="side-nav-item">
+                     <a href="javascript: void(0);" class="side-nav-link">
+                        <i class="uil-briefcase"></i>
+                        <span> Proyectos </span>
+                        <span class="menu-arrow"></span>
+                     </a>
+                     <ul class="side-nav-second-level" aria-expanded="false">
+                        <li>
+                           <a href="apps-projects-list.html">Lista</a>
+                        </li>
+                        <li>
+                           <a href="apps-projects-details.html">Detailles</a>
+                        </li>
+                        <li>
+                           <a href="apps-projects-gantt.html">Gantt <span class="badge badge-pill badge-light-lighten font-10 float-right">New</span></a>
+                        </li>
+                        <li>
+                           <a href="apps-projects-add.html">Crear Projecto <span class="badge badge-pill badge-success-lighten font-10 float-right">New</span></a>
+                        </li>
+                     </ul>
+                  </li>
 
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                           <i class="mdi mdi-account-edit mr-1"></i>
-                           <span>Configuracion</span>
-                        </a>
+                  <li class="side-nav-item">
+                     <a href="apps-social-feed.html" class="side-nav-link">
+                        <i><img src="{{ url_for('static', filename='vistaPrincipal/img/socialMedia.svg') }}" alt="" height="20"></i>
+                        <span> Social Media </span>
+                     </a>
+                  </li>
 
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                           <i class="mdi mr-1"><img src="{{ url_for('static', filename='vistaPrincipal/img/ayuda.svg') }}" alt="" height="13"></i>
-                           <span>Ayuda</span>
-                        </a>
+                  <li class="side-nav-item">
+                     <a href="javascript: void(0);" class="side-nav-link">
+                        <i><img src="{{ url_for('static', filename='vistaPrincipal/img/tareas.svg') }}" alt="" height="20"></i>
+                        <span> Tareas </span>
+                        <span class="menu-arrow"></span>
+                     </a>
+                     <ul class="side-nav-second-level" aria-expanded="false">
+                        <li>
+                           <a href="apps-tasks.html">Lista</a>
+                        </li>
+                        <li>
+                           <a href="apps-tasks-details.html">Detalles</a>
+                        </li>
+                     </ul>
+                  </li>
 
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                           <i class="mdi mr-1"><img src="{{ url_for('static', filename='vistaPrincipal/img/salir.svg') }}" alt="" height="13"></i>
-                           <span>Cerrar Sesion</span>
-                        </a>
+                  <li class="side-nav-title side-nav-item mt-1">Herramientas</li>
 
-                     </div>
+                  <li class="side-nav-item">
+                     <a href="javascript: void(0);" class="side-nav-link">
+                        <i><img src="{{ url_for('static', filename='vistaPrincipal/img/mapa.svg') }}" alt="" height="20"></i>
+                        <span> Mapas </span>
+                        <span class="menu-arrow"></span>
+                     </a>
+                     <ul class="side-nav-second-level" aria-expanded="false">
+                        <li>
+                           <a href="maps-google.html">Google Maps</a>
+                        </li>
+                        <li>
+                           <a href="maps-vector.html">Vector Maps</a>
+                        </li>
+                     </ul>
                   </li>
 
                </ul>
-               <button class="button-menu-mobile open-left disable-btn">
-                  <i class="mdi mdi-menu"></i>
-               </button>
-               <div class="app-search dropdown d-none d-lg-block">
-                  <form>
-                     <div class="input-group">
-                        <input type="text" class="form-control dropdown-toggle" placeholder="Buscar..." id="top-search">
-                        <span class="mdi search-icon"><img src="{{ url_for('static', filename='vistaPrincipal/img/buscar.svg') }}" alt="" height="20"></span>
-                        <div class="input-group-append">
-                           <button class="btn btn-primary" type="submit">Buscar</button>
+               <!-- End Sidebar -->
+
+               <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+         </div>
+         <!-- Left Sidebar End -->
+
+         <!-- ============================================================== -->
+         <!-- Start Page Content here -->
+         <!-- ============================================================== -->
+
+         <div class="content-page">
+            <div class="content">
+               <!-- Topbar Start -->
+               <div class="navbar-custom">
+                  <ul class="list-unstyled topbar-right-menu float-right mb-0">
+                     <li class="dropdown notification-list d-lg-none">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                           <i class="dripicons-search noti-icon"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                           <form class="p-3">
+                              <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                           </form>
+                        </div>
+                     </li>
+
+                     <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                           <i class="noti-icon"><img src="{{ url_for('static', filename='vistaPrincipal/img/notificacion.svg') }}" alt="" height="20"></i>
+
+                           <span class="noti-icon-badge"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated dropdown-lg">
+
+                           <!-- item-->
+                           <div class="dropdown-item noti-title">
+                              <h5 class="m-0">
+                                 <span class="float-right">
+                                    <a href="javascript: void(0);" class="text-dark">
+                                       <small>Eliminar todo</small>
+                                    </a>
+                                 </span>Notificaciones
+                              </h5>
+                           </div>
+
+                           <div style="max-height: 230px;" data-simplebar>
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                 <div class="notify-icon bg-primary">
+                                    <i class="mdi mdi-comment-account-outline"></i>
+                                 </div>
+                                 <p class="notify-details">Caleb Flakelar commented on Admin
+                                    <small class="text-muted">1 min ago</small>
+                                 </p>
+                              </a>
+
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                 <div class="notify-icon bg-info">
+                                    <i class="mdi mdi-account-plus"></i>
+                                 </div>
+                                 <p class="notify-details">Nuevo usuario registrado.
+                                    <small class="text-muted">Hace 5 horas</small>
+                                 </p>
+                              </a>
+
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                 <div class="notify-icon">
+                                    <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                 </div>
+                                 <p class="notify-details">Cristina Pride</p>
+                                 <p class="text-muted mb-0 user-msg">
+                                    <small>Hola, Como estas? Que sabes sobre la siguiente clase?</small>
+                                 </p>
+                              </a>
+
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                 <div class="notify-icon bg-primary">
+                                    <i class="mdi mdi-comment-account-outline"></i>
+                                 </div>
+                                 <p class="notify-details">Caleb Flakelar commented on Admin
+                                    <small class="text-muted">4 days ago</small>
+                                 </p>
+                              </a>
+
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                 <div class="notify-icon">
+                                    <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                 </div>
+                                 <p class="notify-details">Karen Robinson</p>
+                                 <p class="text-muted mb-0 user-msg">
+                                    <small>Wow ! this admin looks good and awesome design</small>
+                                 </p>
+                              </a>
+
+                              <!-- item-->
+                              <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                 <div class="notify-icon bg-info">
+                                    <i class="mdi mdi-heart"></i>
+                                 </div>
+                                 <p class="notify-details">Carlos Crouch liked
+                                    <b>Admin</b>
+                                    <small class="text-muted">13 days ago</small>
+                                 </p>
+                              </a>
+                           </div>
+
+                           <!-- All-->
+                           <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
+                              View All
+                           </a>
+
+                        </div>
+                     </li>
+
+                     <li class="dropdown notification-list">
+                        <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                           <span class="account-user-avatar">
+                              <img src="{{ url_for('static', filename='vistaPrincipal/img/avatarHombre.png') }}" alt="user-image" class="rounded-circle">
+                           </span>
+                           <span>
+                              <span class="account-user-name">Juandita Rincon</span>
+                              <span class="account-position">Estudiante</span>
+                           </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                           <!-- item-->
+                           <div class=" dropdown-header noti-title">
+                              <h6 class="text-overflow m-0">Bienvenido !</h6>
+                           </div>
+
+                           <!-- item-->
+                           <a href="javascript:void(0);" class="dropdown-item notify-item">
+                              <i class="mdi  mr-1"><img src="{{ url_for('static', filename='vistaPrincipal/img/miCuenta.svg') }}" alt="" height="13"></i>
+                              <span>Mi Cuenta</span>
+                           </a>
+
+                           <!-- item-->
+                           <a href="javascript:void(0);" class="dropdown-item notify-item">
+                              <i class="mdi mdi-account-edit mr-1"></i>
+                              <span>Configuracion</span>
+                           </a>
+
+                           <!-- item-->
+                           <a href="javascript:void(0);" class="dropdown-item notify-item">
+                              <i class="mdi mr-1"><img src="{{ url_for('static', filename='vistaPrincipal/img/ayuda.svg') }}" alt="" height="13"></i>
+                              <span>Ayuda</span>
+                           </a>
+
+                           <!-- item-->
+                           <a href="javascript:void(0);" class="dropdown-item notify-item">
+                              <i class="mdi mr-1"><img src="{{ url_for('static', filename='vistaPrincipal/img/salir.svg') }}" alt="" height="13"></i>
+                              <span>Cerrar Sesion</span>
+                           </a>
+
+                        </div>
+                     </li>
+
+                  </ul>
+                  <button class="button-menu-mobile open-left disable-btn">
+                     <i class="mdi mdi-menu"></i>
+                  </button>
+                  <div class="app-search dropdown d-none d-lg-block">
+                     <form>
+                        <div class="input-group">
+                           <input type="text" class="form-control dropdown-toggle" placeholder="Buscar..." id="top-search">
+                           <span class="mdi search-icon"><img src="{{ url_for('static', filename='vistaPrincipal/img/buscar.svg') }}" alt="" height="20"></span>
+                           <div class="input-group-append">
+                              <button class="btn btn-primary" type="submit">Buscar</button>
+                           </div>
+                        </div>
+
+                     </form>
+
+                     <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
+                        <!-- item-->
+                        <div class="dropdown-header noti-title">
+                           <h5 class="text-overflow mb-2">Se encontraron <span class="text-danger">17</span> resultados
+                           </h5>
+                        </div>
+
+                        <!-- item-->
+                        <div class="dropdown-header noti-title">
+                           <h6 class="text-overflow mb-2 text-uppercase">Usuarios</h6>
+                        </div>
+
+                        <div class="notification-list">
+                           <!-- item-->
+                           <a href="javascript:void(0);" class="dropdown-item notify-item">
+                              <div class="media">
+                                 <img class="d-flex mr-2 rounded-circle" src="{{ url_for('static', filename='vistaPrincipal/img/avatarHombre.png') }}" alt="Generic placeholder image" height="32">
+                                 <div class="media-body">
+                                    <h5 class="m-0 font-14">Messi Perez</h5>
+                                    <span class="font-12 mb-0">Ingeniero</span>
+                                 </div>
+                              </div>
+                           </a>
+
+                           <!-- item-->
+                           <a href="javascript:void(0);" class="dropdown-item notify-item">
+                              <div class="media">
+                                 <img class="d-flex mr-2 rounded-circle" src="{{ url_for('static', filename='vistaPrincipal/img/avatarHombre.png') }}" alt="Generic placeholder image" height="32">
+                                 <div class="media-body">
+                                    <h5 class="m-0 font-14">Daniels Fernandez</h5>
+                                    <span class="font-12 mb-0">Estudiante</span>
+                                 </div>
+                              </div>
+                           </a>
                         </div>
                      </div>
-
-                  </form>
-
-                  <div class="dropdown-menu dropdown-menu-animated dropdown-lg" id="search-dropdown">
-                     <!-- item-->
-                     <div class="dropdown-header noti-title">
-                        <h5 class="text-overflow mb-2">Se encontraron <span class="text-danger">17</span> resultados
-                        </h5>
-                     </div>
-
-                     <!-- item-->
-                     <div class="dropdown-header noti-title">
-                        <h6 class="text-overflow mb-2 text-uppercase">Usuarios</h6>
-                     </div>
-
-                     <div class="notification-list">
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                           <div class="media">
-                              <img class="d-flex mr-2 rounded-circle" src="{{ url_for('static', filename='vistaPrincipal/img/avatarHombre.png') }}"
-                                 alt="Generic placeholder image" height="32">
-                              <div class="media-body">
-                                 <h5 class="m-0 font-14">Messi Perez</h5>
-                                 <span class="font-12 mb-0">Ingeniero</span>
-                              </div>
-                           </div>
-                        </a>
-
-                        <!-- item-->
-                        <a href="javascript:void(0);" class="dropdown-item notify-item">
-                           <div class="media">
-                              <img class="d-flex mr-2 rounded-circle" src="{{ url_for('static', filename='vistaPrincipal/img/avatarHombre.png') }}"
-                                 alt="Generic placeholder image" height="32">
-                              <div class="media-body">
-                                 <h5 class="m-0 font-14">Daniels Fernandez</h5>
-                                 <span class="font-12 mb-0">Estudiante</span>
-                              </div>
-                           </div>
-                        </a>
-                     </div>
                   </div>
                </div>
-            </div>
-            <!-- end Topbar -->
+               <!-- end Topbar -->
 
-            <!-- Start Content-->
-            <div class="container-fluid">
+               <!-- Start Content-->
+               <div class="container-fluid">
 
-               <!-- start page title -->
-               <div class="row">
-                  <div class="col-12">
-                     <div class="page-title-box">
-                        <h4 class="page-title">Calendario</h4>
+                  <!-- start page title -->
+                  <div class="row">
+                     <div class="col-12">
+                        <div class="page-title-box">
+                           <h4 class="page-title">Calendario</h4>
+                        </div>
                      </div>
                   </div>
-               </div>
-               <!-- end page title -->
+                  <!-- end page title -->
 
-               <div class="row">
-                  <div class="col-12">
+                  <div class="row">
+                     <div class="col-12">
 
-                     <div class="card">
-                        <div class="card-body">
-                           <div class="row">
-                              <div class="col-lg-3">
-                                 <a href="#" data-toggle="modal" data-target="#add-category"
-                                    class="btn btn-lg font-16 btn-primary btn-block  ">
-                                    <i class="mdi"><img src="{{ url_for('static', filename='vistaPrincipal/img/nuevo.png') }}" alt="" height="15"></i> Crear Nuevo Evento
-                                 </a>
-                                 <div id="external-events" class="m-t-20">
-                                    <br>
-                                    <p class="text-muted">Arrastra y suelta tu evento o haz clic en el calendario</p>
-                                    <div class="external-event bg-success" data-class="bg-success">
-                                       <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Clase
+                        <div class="card">
+                           <div class="card-body">
+                              <div class="row">
+                                 <div class="col-lg-3">
+                                    <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-lg font-16 btn-primary btn-block  ">
+                                       <i class="mdi"><img src="{{ url_for('static', filename='vistaPrincipal/img/nuevo.png') }}" alt="" height="15"></i> Crear Nuevo Evento
+                                    </a>
+                                    <div id="external-events" class="m-t-20">
+                                       <br>
+                                       <p class="text-muted">Arrastra y suelta tu evento o haz clic en el calendario</p>
+                                       <div class="external-event bg-success" data-class="bg-success">
+                                          <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Clase
+                                       </div>
+                                       <div class="external-event bg-info" data-class="bg-info">
+                                          <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Mi evento
+                                       </div>
+                                       <div class="external-event bg-warning" data-class="bg-warning">
+                                          <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Reunion
+                                       </div>
+                                       <div class="external-event bg-danger" data-class="bg-danger">
+                                          <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Comida
+                                       </div>
                                     </div>
-                                    <div class="external-event bg-info" data-class="bg-info">
-                                       <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Mi evento
+
+                                    <!-- checkbox -->
+                                    <div class="custom-control custom-checkbox mt-3">
+                                       <input type="checkbox" class="custom-control-input" id="drop-remove">
+                                       <label class="custom-control-label" for="drop-remove">Remover despues de programar</label>
                                     </div>
-                                    <div class="external-event bg-warning" data-class="bg-warning">
-                                       <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Reunion
-                                    </div>
-                                    <div class="external-event bg-danger" data-class="bg-danger">
-                                       <i class="mdi mr-2 vertical-middle"><img src="{{ url_for('static', filename='vistaPrincipal/img/evento.png') }}" alt="" height="15"></i>Comida
-                                    </div>
+                                 </div> <!-- end col-->
+
+                                 <div class="col-lg-9">
+                                    <div id="calendar"></div>
+                                 </div> <!-- end col -->
+
+                              </div> <!-- end row -->
+                           </div> <!-- end card body-->
+                        </div> <!-- end card -->
+
+                        <!-- Add New Event MODAL -->
+                        <div class="modal fade" id="event-modal" tabindex="-1">
+                           <div class="modal-dialog">
+                              <div class="modal-content">
+                                 <div class="modal-header pr-4 pl-4 border-bottom-0 d-block">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Añadir nueva categoria</h4>
                                  </div>
+                                 <div class="modal-body pt-3 pr-4 pl-4">
+                                 </div>
+                                 <div class="text-right pb-4 pr-4">
+                                    <button type="button" class="btn btn-light " data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-success save-event  ">Crear Categoria</button>
+                                    <button type="button" class="btn btn-danger delete-event  " data-dismiss="modal">Borrar</button>
+                                 </div>
+                              </div> <!-- end modal-content-->
+                           </div> <!-- end modal dialog-->
+                        </div>
+                        <!-- end modal-->
 
-                                 <!-- checkbox -->
-                                 <div class="custom-control custom-checkbox mt-3">
-                                    <input type="checkbox" class="custom-control-input" id="drop-remove">
-                                    <label class="custom-control-label" for="drop-remove">Remover despues de programar</label>
-                                 </div>                                 
-                              </div> <!-- end col-->
+                        <!-- Modal Add Category -->
+                        <div class="modal fade" id="add-category" tabindex="-1">
+                           <div class="modal-dialog">
+                              <div class="modal-content">
+                                 <div class="modal-header border-bottom-0 d-block">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Agregar categoria de evento</h4>
+                                 </div>
+                                 <div class="modal-body p-4">
+                                    <form>
+                                       <div class="form-group">
+                                          <label class="control-label">Nombre de la categoria de evento</label>
+                                          <input id="inputNombreMateria" class="form-control form-white" placeholder="Digite el nombre del evento" type="text" name="category-name" />
 
-                              <div class="col-lg-9">
-                                 <div id="calendar"></div>
-                              </div> <!-- end col -->
-
-                           </div> <!-- end row -->
-                        </div> <!-- end card body-->
-                     </div> <!-- end card -->
-
-                     <!-- Add New Event MODAL -->
-                     <div class="modal fade" id="event-modal" tabindex="-1">
-                        <div class="modal-dialog">
-                           <div class="modal-content">
-                              <div class="modal-header pr-4 pl-4 border-bottom-0 d-block">
-                                 <button type="button" class="close" data-dismiss="modal"
-                                    aria-hidden="true">&times;</button>
-                                 <h4 class="modal-title">Añadir nueva categoria</h4>
-                              </div>
-                              <div class="modal-body pt-3 pr-4 pl-4">
-                              </div>
-                              <div class="text-right pb-4 pr-4">
-                                 <button type="button" class="btn btn-light " data-dismiss="modal">Cerrar</button>
-                                 <button type="button" class="btn btn-success save-event  ">Crear Categoria</button>
-                                 <button type="button" class="btn btn-danger delete-event  "
-                                    data-dismiss="modal">Borrar</button>
-                              </div>
-                           </div> <!-- end modal-content-->
-                        </div> <!-- end modal dialog-->
-                     </div>
-                     <!-- end modal-->
-
-                     <!-- Modal Add Category -->
-                     <div class="modal fade" id="add-category" tabindex="-1">
-                        <div class="modal-dialog">
-                           <div class="modal-content">
-                              <div class="modal-header border-bottom-0 d-block">
-                                 <button type="button" class="close" data-dismiss="modal"
-                                    aria-hidden="true">&times;</button>
-                                 <h4 class="modal-title">Agregar categoria de evento</h4>
-                              </div>
-                              <div class="modal-body p-4">
-                                 <form>
-                                    <div class="form-group">
-                                       <label class="control-label">Nombre de la categoria de evento</label>
-                                       <input id="inputNombreMateria" class="form-control form-white"
-                                          placeholder="Digite el nombre del evento" type="text" name="category-name" />
-
-                                    </div>
-                                    <div class="form-group">
-                                       <label class="control-label">Descripcion de la categoria de evento</label>
-                                       <input id="inputDescripcionMateria" class="form-control form-white"
-                                          placeholder="Digite una breve descripcion del evento" type="text" />
-                                    </div>
-                                    <!-- <div class="form-group">
+                                       </div>
+                                       <div class="form-group">
+                                          <label class="control-label">Descripcion de la categoria de evento</label>
+                                          <input id="inputDescripcionMateria" class="form-control form-white" placeholder="Digite una breve descripcion del evento" type="text" />
+                                       </div>
+                                       <!-- <div class="form-group">
                                        <label class="control-label">Hora de inicio</label>
                                        <input id="inputHoraInicio" class="form-control form-white"
                                           placeholder="Digite la hora en que inicia este evento" type="text" />
@@ -500,82 +476,79 @@
                                        <input id="inputHoraFinal" class="form-control form-white"
                                           placeholder="Digite la hora en que finaliza la materia" type="text" />
                                     </div> -->
-                                    <div class="form-group">
-                                       <label class="control-label">Escoje un color para el evento</label>
-                                       <select class="form-control form-white" data-placeholder="Selecciona un color..."
-                                          name="category-color">
-                                          <option value="primary">Primary</option>
-                                          <option value="success">Success</option>
-                                          <option value="danger">Danger</option>
-                                          <option value="info">Info</option>
-                                          <option value="warning">Warning</option>
-                                          <option value="dark">Dark</option>
-                                       </select>
+                                       <div class="form-group">
+                                          <label class="control-label">Escoje un color para el evento</label>
+                                          <select id="inputColor" class="form-control form-white" data-placeholder="Selecciona un color..." name="category-color">
+                                             <option value="primary">Primary</option>
+                                             <option value="success">Success</option>
+                                             <option value="danger">Danger</option>
+                                             <option value="info">Info</option>
+                                             <option value="warning">Warning</option>
+                                             <option value="dark">Dark</option>
+                                          </select>
+                                       </div>
+
+                                    </form>
+
+                                    <div class="text-right">
+                                       <button type="button" class="btn btn-light " data-dismiss="modal">Cerrar</button>
+                                       <button id="btnSubirMateria" type="button" class="btn btn-primary ml-1   save-category" data-dismiss="modal">Guardar</button>
                                     </div>
 
-                                 </form>
-
-                                 <div class="text-right">
-                                    <button type="button" class="btn btn-light " data-dismiss="modal">Cerrar</button>
-                                    <button id="btnSubirMateria" type="button"
-                                       class="btn btn-primary ml-1   save-category"
-                                       data-dismiss="modal">Guardar</button>
-                                 </div>
-
-                              </div> <!-- end modal-body-->
-                           </div> <!-- end modal-content-->
-                        </div> <!-- end modal dialog-->
+                                 </div> <!-- end modal-body-->
+                              </div> <!-- end modal-content-->
+                           </div> <!-- end modal dialog-->
+                        </div>
+                        <!-- end modal-->
                      </div>
-                     <!-- end modal-->
-                  </div>
-                  <!-- end col-12 -->
-               </div> <!-- end row -->
+                     <!-- end col-12 -->
+                  </div> <!-- end row -->
 
-            </div> <!-- container -->
+               </div> <!-- container -->
 
-         </div> <!-- content -->
+            </div> <!-- content -->
 
-         <!-- Footer Start -->
-         <footer class="footer">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-md-6">
-                     2020 - 2020 © Estudiantes UD
-                  </div>
-                  <div class="col-md-6">
-                     <div class="text-md-right footer-links d-none d-md-block">
-                        <a href="javascript: void(0);">Sobre Nosotros</a>
-                        <a href="javascript: void(0);">Ayuda</a>
-                        <a href="javascript: void(0);">Contactanos</a>
+            <!-- Footer Start -->
+            <footer class="footer">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-md-6">
+                        2020 - 2020 © Estudiantes UD
+                     </div>
+                     <div class="col-md-6">
+                        <div class="text-md-right footer-links d-none d-md-block">
+                           <a href="javascript: void(0);">Sobre Nosotros</a>
+                           <a href="javascript: void(0);">Ayuda</a>
+                           <a href="javascript: void(0);">Contactanos</a>
+                        </div>
                      </div>
                   </div>
                </div>
-            </div>
-         </footer>
-         <!-- end Footer -->
+            </footer>
+            <!-- end Footer -->
+
+         </div>
+
+         <!-- ============================================================== -->
+         <!-- End Page content -->
+         <!-- ============================================================== -->
+
 
       </div>
+      <!-- END wrapper -->
 
-      <!-- ============================================================== -->
-      <!-- End Page content -->
-      <!-- ============================================================== -->
+      <!-- bundle -->
+      <script src="{{ url_for('static', filename='vistaPrincipal/js/vendor.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='vistaPrincipal/js/app.min.js') }}"></script>
 
+      <!-- third party js -->
+      <script src="{{ url_for('static', filename='vistaPrincipal/js/jquery-ui.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='vistaPrincipal/js/fullcalendar.min.js') }}"></script>
+      <!-- third party js ends -->
 
-   </div>
-   <!-- END wrapper -->
-
-   <!-- bundle -->
-   <script src="{{ url_for('static', filename='vistaPrincipal/js/vendor.min.js') }}"></script>
-   <script src="{{ url_for('static', filename='vistaPrincipal/js/app.min.js') }}"></script>
-
-   <!-- third party js -->
-   <script src="{{ url_for('static', filename='vistaPrincipal/js/jquery-ui.min.js') }}"></script>
-   <script src="{{ url_for('static', filename='vistaPrincipal/js/fullcalendar.min.js') }}"></script>
-   <!-- third party js ends -->
-
-   <!-- demo app -->
-   <script src="{{ url_for('static', filename='vistaPrincipal/js/demo.calendar.js') }}"></script>
-   <!-- end demo js-->
-</body>
+      <!-- demo app -->
+      <script src="{{ url_for('static', filename='vistaPrincipal/js/demo.calendar.js') }}"></script>
+      <!-- end demo js-->
+   </body>
 
 </html>
