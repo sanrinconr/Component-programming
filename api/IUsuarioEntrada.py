@@ -20,3 +20,6 @@ class IUsuarioEntrada:
         return Cargador.getInstancia("Core").registrarUsuario(
             usuario, contrasena, email
         )
+
+    def getMaterias(usuario):
+        return Cargador.getInstancia("Core").getMaterias(usuario)

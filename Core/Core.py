@@ -16,3 +16,9 @@ class Core:
 
     def registrarUsuario(usuario, contrasena, email):
         return "No agregado, no hay base datos :C"
+
+    def getMaterias(usuario):
+        return [
+            {"nombre": "prueba1", "horaInicio": "10:20 PM", "horaFinal": "10:40 PM"},
+            {"nombre": "prueba2", "horaInicio": "10:40 PM", "horaFinal": "10:59 PM"},
+        ]

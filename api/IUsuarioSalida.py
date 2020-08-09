@@ -20,3 +20,6 @@ class IUsuarioSalida:
         return Cargador.getInstancia("Orquestador").registrarUsuario(
             usuario, contrasena, email
         )
+
+    def getMaterias(usuario):
+        return Cargador.getInstancia("Orquestador").getMaterias(usuario)

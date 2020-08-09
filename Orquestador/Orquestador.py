@@ -27,6 +27,9 @@ class Orquestador:
     def registrarUsuario(usuario, contrasena, email):
         return IUsuarioEntrada.registrarUsuario(usuario, contrasena, email)
 
+    def getMaterias(usuario):
+        return IUsuarioEntrada.getMaterias(usuario)
+
 
 # Ejecucion del main, el punto de inicio en otras palabras
 if __name__ == "__main__":

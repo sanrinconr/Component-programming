@@ -151,6 +151,16 @@ class Gui:
         }
         return jsonify(salida)
 
+    @app.route("/vistaPrincipal/getMaterias")
+    def getMaterias(nombre=None):
+        try:
+            usuario = session["usuario"]
+            resultado = IUsuarioSalida.getMaterias(usuario)
+
+            return jsonify(resultado)
+        except:
+            return jsonify("Sin iniciar sesion")
+
     def extraerNecesarios():
         with zipfile.ZipFile("front/Gui.zip", "r") as zip_ref:
             zip_ref.extractall("front/__web__/")
