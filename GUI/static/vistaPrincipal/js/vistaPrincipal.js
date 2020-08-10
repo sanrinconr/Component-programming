@@ -77,4 +77,12 @@ $(function(){
       }
     });
   });
+  eliminarSesionBarra()
+
 });
+
+function eliminarSesionBarra(){
+  $("#elementoIniciarSesion").remove()
+  $("#elementoRegistrarse").remove()
+
+}
