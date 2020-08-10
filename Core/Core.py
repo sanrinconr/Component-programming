@@ -1,12 +1,16 @@
+import sys
+
+sys.path.append("api/Api.zip")
+from IDatosEntrada import IDatosEntrada
+from IDatosSalida import IDatosSalida
+
+
 class Core:
     def verificarReglas():
         print("Soy " + Core.__name__)
 
     def validarUsuario(usuario, contrasena):
-        if usuario == "test" and contrasena == "test":
-            return True
-        ##Aqui el core hace la llamada a la DB
-        return "No es posible validar, no hay base de datos"
+        return str(IDatosSalida.validarUsuario(usuario, contrasena))
 
     def agregarMateria(nombre, descripcion, horaIncio, horaFinal, color):
         return "No agregada, falta base de datos"

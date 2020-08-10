@@ -20,8 +20,9 @@ except:
 # Se elimina cualquier zip en el orquestador
 for parent, dirnames, filenames in os.walk(destino):
     for fn in filenames:
-        if fn.lower().endswith(".zip"):
+        if fn == "Core.zip":
             os.remove(os.path.join(parent, fn))
+
 
 ##Creacion del zip
 zipObj = ZipFile("Core.zip", "w")

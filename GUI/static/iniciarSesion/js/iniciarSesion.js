@@ -6,11 +6,12 @@ $(function() {
     $.ajax({
       url: '/login/validarLogin',
       type: 'GET',
-      data: {usuario: "test",
-            contrasena:"test"
+      data: {usuario: $("#inputUsuario").val(),
+            contrasena:$("#inputContrasena").val()
             },
       success: function(data) {
     	//called when successful
+      console.log("RES:" +data.valido)
       if(data.valido == "True"){
         location.href = '/vistaPrincipal';
       }else{

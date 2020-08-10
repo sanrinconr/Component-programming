@@ -14,16 +14,18 @@ destino = "Orquestador/front/"
 
 # Se elimina cualquier zip en el orquestador
 
-try:
-    shutil.rmtree(destino)
-except:
-    pass
+
 try:
     os.makedirs(destino)
     ## it creates the destination folder
 except:
     pass
 
+# Se elimina cualquier zip en el orquestador
+for parent, dirnames, filenames in os.walk(destino):
+    for fn in filenames:
+        if fn == "Gui.zip":
+            os.remove(os.path.join(parent, fn))
 
 ##Creacion del zip
 zipObj = ZipFile("Gui.zip", "w")
