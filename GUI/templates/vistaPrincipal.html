@@ -13,6 +13,7 @@
       <link rel="shortcut icon" href="{{ url_for('static', filename='img/calendario.png') }}">
 
       <script src="{{ url_for('static', filename='vistaPrincipal/js/vistaPrincipal.js') }}"></script>
+      <script src="{{ url_for('static', filename='vistaPrincipal/js/gestionFechas.js') }}"></script>
 
 
    </head>
@@ -24,6 +25,10 @@
          <div class="row ml-2">
             <!-- Eventos -->
             <div class="col col-md-2 col-sm-12 col-12">
+               <div class="row p-2">
+                  <!--Usado para que los botones queden al mismo nivel del horario-->
+                  <h3></h3>
+               </div>
                <div class="row p-2">
                   <button class="btn btn-block btn-success">Crear evento</button>
                </div>
@@ -38,7 +43,7 @@
             <!--Horario -->
             <div class="col col-md-10 col-sm-12 col-12">
                <div class="text-center">
-                  <h3>MES ACTUAL</h3>
+                  <h3 id="mesActual">MES ACTUAL</h3>
                </div>
                <table class="table table-sm table-bordered text-center">
                   <tr>
@@ -48,28 +53,15 @@
                      <th class="colum">Jueves</th>
                      <th class="colum">Viernes</th>
                      <th class="colum">Sabado</th>
+                     <th class="colum">Domingo</th>
                   </tr>
                   <tr class="fila">
-                     <td class="colum text-center">
-                        <div class="container-fluid">
-                           <div class="row">
-                              <div class="diaMes col col-md-1">
-                                 1
-                              </div>
-                           </div>
-                           <div class="row">
-                              <div class="eventos col col-md-11">
-                                 <button class="btn btn-primary m-1">Hacer mercado</button>
-                                 <button class="btn btn-success m-1">Hacer mercado</button>
-                              </div>
-                           </div>
-                        </div>
-                     </td>
+                     {%for i in range(7)%}
                      <td class="colum">
                         <div class="container-fluid">
                            <div class="row">
-                              <div class="diaMes col col-md-1">
-                                 2
+                              <div class="diaPrimeraCol col col-md-1">
+                                 <span>1</span>
                               </div>
                            </div>
                            <div class="row">
@@ -80,52 +72,29 @@
                            </div>
                         </div>
                      </td>
-                     <td class="colum">Programacion Lineal <br />Sabio - 312</td>
-                     <td class="colum">Ecuaciones diferenciales<br />Copete - 107</td>
-                     <td class="colum"></td>
-                     <td class="colum">Ecuaciones diferenciales<br />Sabio - 204</td>
+                     {%endfor%}
                   </tr>
+                  {% for i in range(5) %}
                   <tr class="fila">
-                     <td class="colum">IO1 <br />Sabio - 203</td>
-                     <td class="colum"></td>
-                     <td class="colum"></td>
-                     <td class="colum">IO1 <br />Sabio - 310</td>
-                     <td class="colum">IO1 <br />Sabio - 308</td>
-                     <td class="colum"></td>
+                     {%for i in range(7)%}
+                     <td class="colum">
+                        <div class="container-fluid">
+                           <div class="row">
+                              <div class="diaMes col col-md-1">
+                                 <span>1</span>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="eventos col col-md-11">
+                                 <button class="btn btn-primary m-1">Ejercicios estadistica</button>
+                                 <button class="btn btn-success m-1">Programa ciencias</button>
+                              </div>
+                           </div>
+                        </div>
+                     </td>
+                     {%endfor%}
                   </tr>
-                  <tr class="fila">
-                     <td class="colum"></td>
-                     <td class="colum"></td>
-                     <td class="colum"></td>
-                     <td class="colum"></td>
-                     <td class="colum"></td>
-                     <td class="colum">Arquitectura de computadores <br />Sabio - 311</td>
-                  </tr>
-                  <tr class="fila">
-                     <td class="colum"></td>
-                     <td class="colum">Economia <br />Copete - 206</td>
-                     <td class="colum">Modelos I <br />Sabio - 503</td>
-                     <td class="colum">Economia <br />Sabio - 407</td>
-                     <td class="colum">Modelos I <br />Copete - 103</td>
-                     <td class="colum">Arquitectura de computadores <br />Sabio - 311</td>
-                  </tr>
-                  <tr class="fila">
-                     <td class="colum"></td>
-                     <td class="colum"></td>
-                     <td class="colum">Arquitectura de computadores <br />Sabio - 502</td>
-                     <td class="colum"></td>
-                     <td class="colum"></td>
-                     <td class="colum"></td>
-                  </tr>
-                  <tr class="fila">
-                     <td class="colum">Modelos II<br />Sabio - 501</td>
-                     <td class="colum"></td>
-                     <td class="colum">Modelos II<br />Copete - 208</td>
-                     <td class="colum"></td>
-                     <td class="colum" id="foforro">Foforro <br />
-                        Cuatro parques</td>
-                     <td class="colum"></td>
-                  </tr>
+                  {% endfor %}
                </table>
                <!-- Horario section end -->
             </div>
