@@ -7,7 +7,7 @@ class baseDatos:
     def __init__(self):
         # Conexion a la base de datos
         self.connection = pymysql.connect(
-            host="localhost", user="root", password="By4cug4n", db="fis",
+            host="localhost", user="root", password="1234", db="fis",
         )
 
         self.cursor = self.connection.cursor()
@@ -73,13 +73,13 @@ class baseDatos:
         self,
         seRealizo,
         Descripcion,
-        añoI,
+        anoI,
         mesI,
         diaI,
         HoraI,
         MinutoI,
         SegundoI,
-        añoF,
+        anoF,
         mesF,
         diaF,
         HoraF,
