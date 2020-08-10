@@ -32,7 +32,7 @@ for dirname, subdirs, files in os.walk(origen):
     for filename in files:
         if filename.lower().endswith(".pyc"):
             zipObj.write(os.path.join(dirname, filename), arcname=filename)
-
+zipObj.close()
 
 # Se elimina cualquier .pyc del componentes
 for parent, dirnames, filenames in os.walk(origen):
