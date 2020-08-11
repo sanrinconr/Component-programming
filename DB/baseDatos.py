@@ -64,9 +64,9 @@ class baseDatos:
         try:
             self.cursor.execute(sql, valores)
             self.connection.commit()
+            return True
         except Exception as e:
-            print(e)
-            raise
+            return str(e)
 
     # Adicion de actividades
     def ingresar_actividad(

@@ -1,19 +1,26 @@
 $(function(){
+  // DateTime picker for Dates
   $( "#btnSubirMateria" ).click(function() {
     $.ajax({
       url: '/vistaPrincipal/agregarMateria',
       type: 'GET',
+      dataType : 'json',
       data: {nombre: $("#inputNombreMateria").val(),
             descripcion:$("#inputDescripcionMateria").val(),
-            horaInicio:$("#inputHoraInicio").val(),
-            horaFinal:$("#inputHoraFinal").val(),
-            color:$("#inputColor").children("option:selected").val(),
+            anioInicio:$("#inputHoraInicio").val(),
+            mesInicio:$("#inputHoraFinal").val(),
+            HoraInicio:$("#inputColor").children("option:selected").val(),
+            minutoInicio:$("#inputColor").children("option:selected").val(),
+            segundoInicio:$("#inputColor").children("option:selected").val(),
+            anioFinal:$("#inputHoraInicio").val(),
+            mesFinal:$("#inputHoraFinal").val(),
+            HoraFinal:$("#inputColor").children("option:selected").val(),
+            minutoFinal:$("#inputColor").children("option:selected").val(),
+            segundoFinal:$("#inputColor").children("option:selected").val(),
             },
       success: function(data) {
-      //called when successful
-      alert(data.nombre+"\n"+data.descripcion +"\n" +data.agregada+"\n"+data.color)
-      //Dependiendo de lo que salga aqui toca redireccionar o no
-
+        alert(JSON.stringify(data))
+        console.log(data)
       },
       error: function(e) {
       //called when there is an error
