@@ -21,7 +21,7 @@
       <link href="{{ url_for('static', filename='vistaPrincipal/css/app.min.css') }}" rel="stylesheet" type="text/css" id="light-style" />
       <link href="{{ url_for('static', filename='vistaPrincipal/css/app-dark.min.css') }}" rel="stylesheet" type="text/css" id="dark-style" />
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-      <link href="{{ url_for('static', filename='vistaPrincipal/css/titulos.css') }}" rel="stylesheet" type="text/css" id="dark-style" />      
+      <link href="{{ url_for('static', filename='vistaPrincipal/css/titulos.css') }}" rel="stylesheet" type="text/css" id="dark-style" />
       <script src="{{ url_for('static', filename='vistaPrincipal/js/vistaPrincipal.js') }}"></script>
       <script src="{{ url_for('static', filename='vistaPrincipal/js/gestionFechas.js') }}"></script>
 
@@ -31,7 +31,7 @@
       <!-- Begin page -->
       <div class="wrapper">
          <!-- ========== Left Sidebar Start ========== -->
-         <div class="left-side-menu">            
+         <div class="left-side-menu">
             <!-- LOGO -->
             <a href="#" class="logo text-center titulo">
                <span class="logo-lg">
@@ -54,7 +54,7 @@
                         <i><img src="{{ url_for('static', filename='vistaPrincipal/img/calendario.svg') }}" alt="" height="20"></i>
                         <span> Calendario </span>
                      </a>
-                  </li>                                                                   
+                  </li>
 
                   <li class="side-nav-item">
                      <a href="javascript: void(0);" class="side-nav-link">
@@ -71,7 +71,7 @@
                         </li>
                      </ul>
                   </li>
-               
+
 
                </ul>
                <!-- End Sidebar -->
@@ -143,7 +143,7 @@
                                     <small class="text-muted">Hace 5 horas</small>
                                  </p>
                               </a>
-                              
+
                            </div>
 
                            <!-- All-->
@@ -174,7 +174,7 @@
                            <a href="#" class="dropdown-item notify-item">
                               <i class="mdi  mr-1"><img src="{{ url_for('static', filename='vistaPrincipal/img/miCuenta.svg') }}" alt="" height="13"></i>
                               <span>Mi Cuenta</span>
-                           </a>                           
+                           </a>
 
                            <!-- item-->
                            <a href="#" class="dropdown-item notify-item">
@@ -261,158 +261,155 @@
                   <!-- end page title -->
 
                   <div class="row">
-                     <div class="col-12">
-
+                     <div class="col col-md-12 col-sm-12 col-12">
                         <div class="card">
                            <div class="card-body">
-                              <div class="row">
+                              <div class="row justify-content-center">
                                  <div class="col-lg-3">
-                                    <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-lg font-16 btn-primary btn-block  ">
+                                    <a href="#" data-toggle="modal" data-target="#add-category" class="btn font-16 btn-primary btn-block  ">
                                        <i class="mdi"><img src="{{ url_for('static', filename='vistaPrincipal/img/nuevo.png') }}" alt="" height="15"></i> Crear Nuevo Evento
-                                    </a>                                    
-                                    <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-lg font-16 btn-success btn-block  ">
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#add-category" class="btn font-16 btn-success btn-block  ">
                                        <i class="mdi"><img src="{{ url_for('static', filename='vistaPrincipal/img/nuevo.png') }}" alt="" height="15"></i> Modificar Evento
-                                    </a> 
-                                    <a href="#" data-toggle="modal" data-target="#add-category" class="btn btn-lg font-16 btn-warning btn-block  ">
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#add-category" class="btn font-16 btn-warning btn-block  ">
                                        <i class="mdi"><img src="{{ url_for('static', filename='vistaPrincipal/img/nuevo.png') }}" alt="" height="15"></i> Eliminar Evento
-                                    </a> 
+                                    </a>
 
-                              </div> <!-- end row -->
-                           </div> <!-- end card body-->
-                        </div> <!-- end card -->
+                                 </div> <!-- end row -->
+                              </div> <!-- end card body-->
+                           </div> <!-- end card -->
+                        </div>
                         <!--Horario -->
-            <div class="col col-md-10 col-sm-12 col-12">
-               <div class="row justify-content-center">
-                  <button id="btnMesAnterior" class="btn btn-info ">Atras</button>
-                  <h3 id="mesActual"> MES ACTUAL </h3>
-                  <button id="btnMesSiguiente" class="btn btn-info ">Siguiente</button>
-               </div>
-               <table class="table table-sm table-bordered text-center">
-                  <tr>
-                     <th class="colum">Lunes</th>
-                     <th class="colum">Martes</th>
-                     <th class="colum">Miercoles</th>
-                     <th class="colum">Jueves</th>
-                     <th class="colum">Viernes</th>
-                     <th class="colum">Sabado</th>
-                     <th class="colum">Domingo</th>
-                  </tr>
-                  <tr class="fila">
-                     {%for i in range(7)%}
-                     <td class="colum">
-                        <div class="container-fluid">
-                           <div class="row">
-                              <div class="diaPrimeraCol col col-md-1">
-                                 <span>*</span>
-                              </div>
+                        <div class="col col-md-12 col-sm-12 col-12">
+                           <div class="row justify-content-center">
+                              <button id="btnMesAnterior" class="btn btn-info ">Atras</button>
+                              <h3 id="mesActual"> MES ACTUAL </h3>
+                              <button id="btnMesSiguiente" class="btn btn-info ">Siguiente</button>
                            </div>
-                           <div class="row">
-                              <div class="eventos col col-md-11">
-                                 <button class="btn btn-primary m-1">Libre</button>
-                              </div>
-                           </div>
-                        </div>
-                     </td>
-                     {%endfor%}
-                  </tr>
-                  {% for i in range(5) %}
-                  <tr class="fila">
-                     {%for i in range(7)%}
-                     <td class="colum">
-                        <div class="container-fluid">
-                           <div class="row">
-                              <div class="diaMes col col-md-1">
-                                 <span>*</span>
-                              </div>
-                           </div>
-                           <div class="row">
-                              <div class="eventos col col-md-11">
-                                 LIBRE
-                              </div>
-                           </div>
-                        </div>
-                     </td>
-                     {%endfor%}
-                  </tr>
-                  {% endfor %}
-               </table>
-               <!-- Horario section end -->
-            </div>
-                        <!-- Add New Event MODAL -->
-                        <div class="modal fade" id="event-modal" tabindex="-1">
-                           <div class="modal-dialog">
-                              <div class="modal-content">
-                                 <div class="modal-header pr-4 pl-4 border-bottom-0 d-block">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Añadir nueva categoria</h4>
-                                 </div>
-                                 <div class="modal-body pt-3 pr-4 pl-4">
-                                 </div>
-                                 <div class="text-right pb-4 pr-4">
-                                    <button type="button" class="btn btn-light " data-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-success save-event  ">Crear Categoria</button>
-                                    <button type="button" class="btn btn-danger delete-event  " data-dismiss="modal">Borrar</button>
-                                 </div>
-                              </div> <!-- end modal-content-->
-                           </div> <!-- end modal dialog-->
-                        </div>
-                        <!-- end modal-->
-
-                        <!-- Modal Add Category -->
-                        <div class="modal fade" id="add-category" tabindex="-1">
-                           <div class="modal-dialog">
-                              <div class="modal-content">
-                                 <div class="modal-header border-bottom-0 d-block">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title">Agregar categoria de evento</h4>
-                                 </div>
-                                 <div class="modal-body p-4">
-                                    <form>
-                                       <div class="form-group">
-                                          <label class="control-label">Nombre de la categoria de evento</label>
-                                          <input id="inputNombreMateria" class="form-control form-white" placeholder="Digite el nombre del evento" type="text" name="category-name" />
-
+                           <table class="table table-sm table-bordered text-center">
+                              <tr>
+                                 <th class="colum">Lunes</th>
+                                 <th class="colum">Martes</th>
+                                 <th class="colum">Miercoles</th>
+                                 <th class="colum">Jueves</th>
+                                 <th class="colum">Viernes</th>
+                                 <th class="colum">Sabado</th>
+                                 <th class="colum">Domingo</th>
+                              </tr>
+                              <tr class="fila">
+                                 {%for i in range(7)%}
+                                 <td class="colum">
+                                    <div class="container-fluid">
+                                       <div class="row">
+                                          <div class="diaPrimeraCol col col-md-1">
+                                             <span>*</span>
+                                          </div>
                                        </div>
-                                       <div class="form-group">
-                                          <label class="control-label">Descripcion de la categoria de evento</label>
-                                          <input id="inputDescripcionMateria" class="form-control form-white" placeholder="Digite una breve descripcion del evento" type="text" />
+                                       <div class="row">
+                                          <div class="eventos col col-md-11">
+                                             <button class="btn btn-primary m-1">Libre</button>
+                                          </div>
                                        </div>
-                                       <div class="form-group">
+                                    </div>
+                                 </td>
+                                 {%endfor%}
+                              </tr>
+                              {% for i in range(5) %}
+                              <tr class="fila">
+                                 {%for i in range(7)%}
+                                 <td class="colum">
+                                    <div class="container-fluid">
+                                       <div class="row">
+                                          <div class="diaMes col col-md-1">
+                                             <span>*</span>
+                                          </div>
+                                       </div>
+                                       <div class="row">
+                                          <div class="eventos col col-md-11">
+                                             LIBRE
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 {%endfor%}
+                              </tr>
+                              {% endfor %}
+                           </table>
+                           <!-- Horario section end -->
+                        </div>
+                     </div>
+                     <!-- Add New Event MODAL -->
+                     <div class="modal fade" id="event-modal" tabindex="-1">
+                        <div class="modal-dialog">
+                           <div class="modal-content">
+                              <div class="modal-header pr-4 pl-4 border-bottom-0 d-block">
+                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                 <h4 class="modal-title">Añadir nueva categoria</h4>
+                              </div>
+                              <div class="modal-body pt-3 pr-4 pl-4">
+                              </div>
+                              <div class="text-right pb-4 pr-4">
+                                 <button type="button" class="btn btn-light " data-dismiss="modal">Cerrar</button>
+                                 <button type="button" class="btn btn-success save-event  ">Crear Categoria</button>
+                                 <button type="button" class="btn btn-danger delete-event  " data-dismiss="modal">Borrar</button>
+                              </div>
+                           </div> <!-- end modal-content-->
+                        </div> <!-- end modal dialog-->
+                     </div>
+                     <!-- end modal-->
+
+                     <!-- Modal Add Category -->
+                     <div class="modal fade" id="add-category" tabindex="-1">
+                        <div class="modal-dialog">
+                           <div class="modal-content">
+                              <div class="modal-header border-bottom-0 d-block">
+                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                 <h4 class="modal-title">Agregar categoria de evento</h4>
+                              </div>
+                              <div class="modal-body p-4">
+                                 <form>
+                                    <div class="form-group">
+                                       <label class="control-label">Nombre de la categoria de evento</label>
+                                       <input id="inputNombreMateria" class="form-control form-white" placeholder="Digite el nombre del evento" type="text" name="category-name" />
+
+                                    </div>
+                                    <div class="form-group">
+                                       <label class="control-label">Descripcion de la categoria de evento</label>
+                                       <input id="inputDescripcionMateria" class="form-control form-white" placeholder="Digite una breve descripcion del evento" type="text" />
+                                    </div>
+                                    <div class="form-group">
                                        <label class="control-label">Hora de inicio</label>
-                                       <input id="inputHoraInicio" class="form-control form-white"
-                                          placeholder="Digite la hora en que inicia este evento" type="text" />
+                                       <input id="inputHoraInicio" class="form-control form-white" placeholder="Digite la hora en que inicia este evento" type="text" />
                                     </div>
                                     <div class="form-group">
                                        <label class="control-label">Hora de finalizacion</label>
-                                       <input id="inputHoraFinal" class="form-control form-white"
-                                          placeholder="Digite la hora en que finaliza la materia" type="text" />
+                                       <input id="inputHoraFinal" class="form-control form-white" placeholder="Digite la hora en que finaliza la materia" type="text" />
                                     </div>
-                                       <div class="form-group">
-                                          <label class="control-label">Escoje un color para el evento</label>
-                                          <select id="inputColor" class="form-control form-white" data-placeholder="Selecciona un color..." name="category-color">
-                                             <option value="primary">Azul</option>
-                                             <option value="success">Verde</option>
-                                             <option value="danger">Rojo</option>
-                                             <option value="info">Azul claro</option>
-                                             <option value="warning">Amarillo</option>
-                                             <option value="dark">Negro</option>
-                                          </select>
-                                       </div>
-
-                                    </form>
-
-                                    <div class="text-right">
-                                       <button type="button" class="btn btn-light " data-dismiss="modal">Cerrar</button>
-                                       <button id="btnSubirMateria" type="button" class="btn btn-primary ml-1   save-category" data-dismiss="modal">Guardar</button>
+                                    <div class="form-group">
+                                       <label class="control-label">Escoje un color para el evento</label>
+                                       <select id="inputColor" class="form-control form-white" data-placeholder="Selecciona un color..." name="category-color">
+                                          <option value="primary">Azul</option>
+                                          <option value="success">Verde</option>
+                                          <option value="danger">Rojo</option>
+                                          <option value="info">Azul claro</option>
+                                          <option value="warning">Amarillo</option>
+                                          <option value="dark">Negro</option>
+                                       </select>
                                     </div>
 
-                                 </div> <!-- end modal-body-->
-                              </div> <!-- end modal-content-->
-                           </div> <!-- end modal dialog-->
-                        </div>
-                        <!-- end modal-->
+                                 </form>
+
+                                 <div class="text-right">
+                                    <button type="button" class="btn btn-light " data-dismiss="modal">Cerrar</button>
+                                    <button id="btnSubirMateria" type="button" class="btn btn-primary ml-1   save-category" data-dismiss="modal">Guardar</button>
+                                 </div>
+
+                              </div> <!-- end modal-body-->
+                           </div> <!-- end modal-content-->
+                        </div> <!-- end modal dialog-->
                      </div>
-                     <!-- end col-12 -->
+                     <!-- end modal-->
                   </div> <!-- end row -->
 
                </div> <!-- container -->
