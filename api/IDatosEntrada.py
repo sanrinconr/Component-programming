@@ -25,6 +25,7 @@ class IDatosEntrada:
         horaFinal,
         minutoFinal,
         segundoFinal,
+        nombreUsuario,
     ):
         clase = Cargador.getInstancia("baseDatos")
         instancia = clase()
@@ -45,5 +46,14 @@ class IDatosEntrada:
             int(horaFinal),
             int(minutoFinal),
             int(segundoFinal),
-            1,
+            nombreUsuario,
         )
+
+    def getMaterias(usuario, mes):
+        clase = Cargador.getInstancia("baseDatos")
+        instancia = clase()
+        print("USUARIO:" + usuario)
+        print("MES:" + mes)
+        lista = instancia.obtener_actividades_mes(mes, usuario)
+        print(lista)
+        return lista

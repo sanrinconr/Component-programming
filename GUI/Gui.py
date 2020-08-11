@@ -167,6 +167,7 @@ class Gui:
                 horaFinal,
                 minutoFinal,
                 segundoFinal,
+                session["usuario"],
             )
         )
         salida = {
@@ -190,13 +191,13 @@ class Gui:
     @app.route("/vistaPrincipal/getMaterias")
     def getMaterias(mes=None):
 
-        try:
-            usuario = session["usuario"]
-            mes = request.args.get("mes")
-            resultado = IUsuarioSalida.getMaterias(usuario, mes)
-            return jsonify(resultado)
-        except:
-            return jsonify("Sin iniciar sesion")
+        # try:
+        usuario = session["usuario"]
+        mes = request.args.get("mes")
+        resultado = IUsuarioSalida.getMaterias(usuario, mes)
+        return jsonify(resultado)
+        # except:
+        #    return jsonify("Sin iniciar sesion")
 
     def extraerNecesarios():
         with zipfile.ZipFile("front/Gui.zip", "r") as zip_ref:

@@ -32,6 +32,7 @@ class Orquestador:
         horaFinal,
         minutoFinal,
         segundoFinal,
+        nombreUsuario,
     ):
         return IDatosEntrada.agregarMateria(
             nombre,
@@ -48,6 +49,7 @@ class Orquestador:
             horaFinal,
             minutoFinal,
             segundoFinal,
+            nombreUsuario,
         )
 
     def eliminarMateria(nombre):

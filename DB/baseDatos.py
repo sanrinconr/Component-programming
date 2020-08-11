@@ -71,7 +71,7 @@ class baseDatos:
     # Adicion de actividades
     def ingresar_actividad(
         self,
-        seRealizo,
+        SeRealizo,
         Nombre,
         Descripcion,
         anoI,
@@ -86,9 +86,8 @@ class baseDatos:
         HoraF,
         MinutoF,
         SegundoF,
-        idHorario,
+        idEstudiante,
     ):
-
         fechaI = datetime(
             year=anoI,
             month=mesI,
@@ -111,33 +110,39 @@ class baseDatos:
             tzinfo=None,
             fold=0,
         )
-        sql = "INSERT INTO Actividad (seRealizo,Nombre,Descripcion,HoraInicio,HoraFin,idHorario) VALUES (%s,%s,%s,%s,%s,%s)"
+        sql = "INSERT INTO Actividad (SeRealizo,Nombre,Descripcion,HoraInicio,HoraFin,idEstudiante) VALUES (%s,%s,%s,%s,%s,%s)"
         valores = (
-            seRealizo,
+            SeRealizo,
             Nombre,
             Descripcion,
             fechaI.strftime("%Y-%m-%d %H:%M:%S"),
             fechaF.strftime("%Y-%m-%d %H:%M:%S"),
-            idHorario,
+            idEstudiante,
         )
         try:
             self.cursor.execute(sql, valores)
             self.connection.commit()
+            return str(True)
         except Exception as e:
-            print(e)
+            return str(e)
             raise
 
-    def obtener_actividades_mes(self, mesI, idHorario):
-        sql = "SELECT Descripcion FROM Actividad WHERE idHorario={} AND MONTH(HoraInicio)={}".format(
-            idHorario, mesI
+    def obtener_actividades_mes(self, idEstudiante, mesI):
+        sql = "SELECT Nombre,Descripcion,HoraInicio, HoraFin FROM Actividad WHERE idEstudiante='{}' AND MONTH(HoraInicio)={}".format(
+            str(idEstudiante), int(mesI)
         )
-        try:
-            self.cursor.execute(sql)
-            user = self.cursor.fetchall()
-            print(user[0])
-        except Exception as e:
-            print(e)
-            raise
+        self.cursor.execute(sql)
+        user = self.cursor.fetchall()
+        salida = []
+        for i in user:
+            temp = {
+                "nombre": str(i[0]),
+                "descripcion": str(i[1]),
+                "fechaInicio": str(i[2]),
+                "fechaFinal": str(i[3]),
+            }
+            salida.append(temp)
+        return salida
 
     # Borrar actividad
     def borrar_actividad(self, idActividad):
@@ -163,7 +168,7 @@ class baseDatos:
         HoraF,
         MinutoF,
         SegundoF,
-        idHorario,
+        idEstudiante,
     ):
         fechaI = datetime(
             year=anoI,
@@ -187,10 +192,10 @@ class baseDatos:
             tzinfo=None,
             fold=0,
         )
-        sql = "UPDATE Actividad SET HoraInicio='{}',HoraFin='{}' WHERE idActividad='{}'".format(
+        sql = "UPDATE Actividad SET HoraInicio='{}',HoraFin='{}' WHERE idEstudiante='{}'".format(
             fechaI.strftime("%Y-%m-%d %H:%M:%S"),
             fechaF.strftime("%Y-%m-%d %H:%M:%S"),
-            idHorario,
+            idEstudiante,
         )
         try:
             self.cursor.execute(sql)
@@ -202,24 +207,12 @@ class baseDatos:
 
 if __name__ == "__main__":
     db = baseDatos()
-    db.ingresar_actividad(
-        "n",
-        "matematicas",
-        "Clase de calculo",
-        2020,
-        8,
-        8,
-        20,
-        20,
-        20,
-        2020,
-        8,
-        8,
-        21,
-        20,
-        10,
-        1,
-    )
+    li = db.obtener_actividades_mes("test", "8")
+    print(li[0][3])
+# database.ingresar_Estudiante('20172020141','juan','montes','1234','juancho')
 # database.Iniciar_sesion('20172020141','1234')
-# database.Crear_horario('HorarioJuan','Horario de universidad',20172020141)
-# database.ingresar_actividad('n','matematicas', 2020,8,8,20,20,20,2020,8,8,21,20,10,1)
+# database.ingresar_actividad('n','matematicas','Clase de calculo', 2020,8,8,20,20,20,2020,8,8,21,20,10,20172020141)
+# database.obtener_actividades_mes(8,20172020141)
+# database.borrar_actividad(1)
+# database.cambiar_hora_actividad(2019,8,8,20,20,20,2019,8,8,21,20,10,20172020141)
+# database.close()

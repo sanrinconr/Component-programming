@@ -133,12 +133,12 @@ function obtenerDatos(m){
     data: {mes: m,
     },
     success: function(data) {
-      console.log(data.length)
       console.log(data)
       console.log(data[0].fechaInicio)
-      for (var i = 0 ; i<data.length ; i++){
+
+    /*  for (var i = 0 ; i<data.length ; i++){
         graficar(data[i].nombre, getDia(data[i].fechaInicio))
-      }
+      }*/
     },
     error: function(e) {
     //called when there is an error
@@ -152,4 +152,19 @@ function graficar(nombre,dia){
       $(this).find('.eventos').append(nombre)
     }
   });
+}
+function sqlToJs(fechaSql) {
+  var mon1   = parseInt(fechaSql.substring(5,7));
+  var dt1  = parseInt(fechaSql.substring(8,10));
+  var yr1   = parseInt(fechaSql.substring(0,5));
+  var hora = parseInt(fechaSql.substring(11,13));
+  var minuto = parseInt(fechaSql.substring(14,16));
+  console.log("MES"+mon1)
+  console.log("dia"+dt1)
+  console.log("anio"+yr1)
+  console.log("hora"+hora)
+  console.log("min"+minuto)
+
+  return new Date(yr1, mon1-1, dt1, hora, minuto);
+
 }

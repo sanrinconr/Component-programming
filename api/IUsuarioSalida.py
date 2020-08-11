@@ -23,6 +23,7 @@ class IUsuarioSalida:
         horaFinal,
         minutoFinal,
         segundoFinal,
+        nombreUsuario,
     ):
         return Cargador.getInstancia("Orquestador").agregarMateria(
             nombre,
@@ -39,6 +40,7 @@ class IUsuarioSalida:
             horaFinal,
             minutoFinal,
             segundoFinal,
+            nombreUsuario,
         )
 
     def eliminarMateria(nombre):

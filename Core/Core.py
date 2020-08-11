@@ -53,6 +53,12 @@ class Core:
         return str(IDatosEntrada.registrarUsuario(usuario, contrasena, email))
 
     def getMaterias(usuario, mes):
+        print(usuario)
+        print(mes)
+        lista = IDatosEntrada.getMaterias(mes, usuario)
+
+        return lista
+        """
         return [
             {
                 "nombre": "dia11",
@@ -65,3 +71,4 @@ class Core:
                 "fechaFinal": "08/10/2020 10:20",
             },
         ]
+        """
