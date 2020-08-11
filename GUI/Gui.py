@@ -148,6 +148,7 @@ class Gui:
         mesFinal = request.args.get("mesFinal")
         diaFinal = request.args.get("diaFinal")
         horaFinal = request.args.get("horaFinal")
+        print("HOOOOOORA " + horaFinal)
         minutoFinal = request.args.get("minutoFinal")
         segundoFinal = request.args.get("segundoFinal")
         seAgrego = str(

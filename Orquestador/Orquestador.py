@@ -4,6 +4,7 @@ import sys
 sys.path.append("api/Api.zip")
 from ISalida import ISalida
 from IUsuarioEntrada import IUsuarioEntrada
+from IDatosEntrada import IDatosEntrada
 from Cargador import Cargador
 
 
@@ -32,7 +33,7 @@ class Orquestador:
         minutoFinal,
         segundoFinal,
     ):
-        return IUsuarioEntrada.agregarMateria(
+        return IDatosEntrada.agregarMateria(
             nombre,
             descripcion,
             anioInicio,
