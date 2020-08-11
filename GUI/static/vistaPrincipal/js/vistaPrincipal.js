@@ -1,25 +1,33 @@
 $(function(){
   // DateTime picker for Dates
-  $( "#btnSubirMateria" ).click(function() {
+  $( "#btnAnadirEvento" ).click(function() {
+    var $datepickerInicio = $('#datepickerInicio').datepicker();
+    var $timepickerInicio = $('#timepickerInicio').timepicker();
+    var $datepickerFinal = $('#datepickerFinal').datepicker();
+    var $timepickerFinal = $('#timepickerFinal').timepicker();
+
+    let fechaInicio = parseDate($datepickerInicio.val()+" "+$timepickerInicio.val())
+    let fechaFinal = parseDate($datepickerFinal.val()+" "+$timepickerFinal.val())
     $.ajax({
       url: '/vistaPrincipal/agregarMateria',
       type: 'GET',
       dataType : 'json',
       data: {nombre: $("#inputNombreMateria").val(),
             descripcion:$("#inputDescripcionMateria").val(),
-            anioInicio:$("#inputHoraInicio").val(),
-            mesInicio:$("#inputHoraFinal").val(),
-            HoraInicio:$("#inputColor").children("option:selected").val(),
-            minutoInicio:$("#inputColor").children("option:selected").val(),
-            segundoInicio:$("#inputColor").children("option:selected").val(),
-            anioFinal:$("#inputHoraInicio").val(),
-            mesFinal:$("#inputHoraFinal").val(),
-            HoraFinal:$("#inputColor").children("option:selected").val(),
-            minutoFinal:$("#inputColor").children("option:selected").val(),
-            segundoFinal:$("#inputColor").children("option:selected").val(),
+            anioInicio:fechaInicio.getYear(),
+            mesInicio:fechaInicio.getMonth(),
+            diaInicio:fechaInicio.getDay(),
+            horaInicio:fechaInicio.getHours(),
+            minutoInicio:fechaInicio.getMinutes(),
+            segundoInicio:fechaInicio.getSeconds(),
+            anioFinal:fechaFinal.getYear(),
+            mesFinal:fechaFinal.getMonth(),
+            diaFinal:fechaFinal.getDay(),
+            HoraFinal:fechaFinal.getHours(),
+            minutoFinal:fechaFinal.getMinutes(),
+            segundoFinal:fechaFinal.getSeconds(),
             },
       success: function(data) {
-        alert(JSON.stringify(data))
         console.log(data)
       },
       error: function(e) {
@@ -92,4 +100,15 @@ function eliminarSesionBarra(){
   $("#elementoIniciarSesion").remove()
   $("#elementoRegistrarse").remove()
 
+}
+function parseDate(str1){
+  // str1 format should be dd/mm/yyyy. Separator can be anything e.g. / or -. It wont effect
+var dt1   = parseInt(str1.substring(0,2));
+var mon1  = parseInt(str1.substring(3,5));
+var yr1   = parseInt(str1.substring(6,10));
+var hora = parseInt(str1.substring(11,13));
+var minuto = parseInt(str1.substring(14,16));
+
+var date1 = new Date(yr1, mon1-1, dt1, hora, minuto);
+return date1;
 }

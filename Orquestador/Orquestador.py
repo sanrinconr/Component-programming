@@ -16,9 +16,37 @@ class Orquestador:
     def validarUsuario(usuario, contrasena):
         return IUsuarioEntrada.validarUsuario(usuario, contrasena)
 
-    def agregarMateria(nombre, descripcion, horaInicio, horaFinal, color):
+    def agregarMateria(
+        nombre,
+        descripcion,
+        anioInicio,
+        mesInicio,
+        diaInicio,
+        horaInicio,
+        minutoInicio,
+        segundoInicio,
+        anioFinal,
+        mesFinal,
+        diaFinal,
+        horaFinal,
+        minutoFinal,
+        segundoFinal,
+    ):
         return IUsuarioEntrada.agregarMateria(
-            nombre, descripcion, horaInicio, horaFinal, color
+            nombre,
+            descripcion,
+            anioInicio,
+            mesInicio,
+            diaInicio,
+            horaInicio,
+            minutoInicio,
+            segundoInicio,
+            anioFinal,
+            mesFinal,
+            diaFinal,
+            horaFinal,
+            minutoFinal,
+            segundoFinal,
         )
 
     def eliminarMateria(nombre):

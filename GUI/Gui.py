@@ -119,23 +119,58 @@ class Gui:
     # Se le pide al orquestador que agrege una nueva materia
     @app.route("/vistaPrincipal/agregarMateria")
     def agregarMateria(
-        nombre=None, descripcion=None, horaInicio=None, horaFinal=None, color=None
+        nombre=None,
+        descripcion=None,
+        anioInicio=None,
+        mesInicio=None,
+        diaInicio=None,
+        horaInicio=None,
+        minutoInicio=None,
+        segundoInicio=None,
+        anioFinal=None,
+        mesFinal=None,
+        diaFinal=None,
+        horaFinal=None,
+        minutoFinal=None,
+        segundoFinal=None,
     ):
+
         nombre = request.args.get("nombre")
         descripcion = request.args.get("descripcion")
+
+        anioInicio = request.args.get("anioInicio")
+        mesInicio = request.args.get("mesInicio")
+        diaInicio = request.args.get("diaInicio")
         horaInicio = request.args.get("horaInicio")
+        minutoInicio = request.args.get("minutoInicio")
+        segundoInicio = request.args.get("segundoInicio")
+        anioFinal = request.args.get("anioFinal")
+        mesFinal = request.args.get("mesFinal")
+        diaFinal = request.args.get("diaFinal")
         horaFinal = request.args.get("horaFinal")
-        color = request.args.get("color")
+        minutoFinal = request.args.get("minutoFinal")
+        segundoFinal = request.args.get("segundoFinal")
         seAgrego = str(
             IUsuarioSalida.agregarMateria(
-                nombre, descripcion, horaInicio, horaFinal, color
+                nombre,
+                descripcion,
+                anioInicio,
+                mesInicio,
+                diaInicio,
+                horaInicio,
+                minutoInicio,
+                segundoInicio,
+                anioFinal,
+                mesFinal,
+                diaFinal,
+                horaFinal,
+                minutoFinal,
+                segundoFinal,
             )
         )
         salida = {
             "nombre": nombre,
             "descripcion": descripcion,
-            "horaInicio": horaInicio,
-            "horaFinal": horaFinal,
             "agregada": seAgrego,
         }
         return jsonify(salida)

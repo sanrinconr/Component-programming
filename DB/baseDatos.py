@@ -120,9 +120,9 @@ class baseDatos:
         try:
             self.cursor.execute(sql, valores)
             self.connection.commit()
+            return True
         except Exception as e:
-            print(e)
-            raise
+            return str(e)
 
 
 # database.Iniciar_sesion('20172020141','1234')
