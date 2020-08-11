@@ -5,5 +5,7 @@ from Cargador import Cargador
 
 
 class IDatosEntrada:
-    def eo():
-        pass
+    def registrarUsuario(usuario, contrasena, email):
+        clase = Cargador.getInstancia("baseDatos")
+        instancia = clase()
+        return instancia.ingresar_Estudiante(usuario, "NA", "NA", contrasena, email)

@@ -19,7 +19,7 @@ class Core:
         return "No eliminada, no hay base de datos"
 
     def registrarUsuario(usuario, contrasena, email):
-        return "No agregado, no hay base datos :C"
+        return str(IDatosEntrada.registrarUsuario(usuario, contrasena, email))
 
     def getMaterias(usuario):
         return [
