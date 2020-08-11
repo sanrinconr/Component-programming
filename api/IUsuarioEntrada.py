@@ -49,5 +49,5 @@ class IUsuarioEntrada:
             usuario, contrasena, email
         )
 
-    def getMaterias(usuario):
-        return Cargador.getInstancia("Core").getMaterias(usuario)
+    def getMaterias(usuario, mes):
+        return Cargador.getInstancia("Core").getMaterias(usuario, mes)

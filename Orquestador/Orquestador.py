@@ -56,8 +56,8 @@ class Orquestador:
     def registrarUsuario(usuario, contrasena, email):
         return IUsuarioEntrada.registrarUsuario(usuario, contrasena, email)
 
-    def getMaterias(usuario):
-        return IUsuarioEntrada.getMaterias(usuario)
+    def getMaterias(usuario, mes):
+        return IUsuarioEntrada.getMaterias(usuario, mes)
 
 
 # Ejecucion del main, el punto de inicio en otras palabras

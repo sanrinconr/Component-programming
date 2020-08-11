@@ -1,4 +1,6 @@
 $(function(){
+  obtenerDatos("8")
+
   // DateTime picker for Dates
   $( "#btnAnadirEvento" ).click(function() {
     var $datepickerInicio = $('#datepickerInicio').datepicker();
@@ -8,7 +10,6 @@ $(function(){
 
     let fechaInicio = parseDate($datepickerInicio.val()+" "+$timepickerInicio.val())
     let fechaFinal = parseDate($datepickerFinal.val()+" "+$timepickerFinal.val())
-    console.log(fechaFinal.getHours())
     $.ajax({
       url: '/vistaPrincipal/agregarMateria',
       type: 'GET',
@@ -103,7 +104,6 @@ function eliminarSesionBarra(){
 
 }
 function parseDate(str1){
-  console.log("FECHA ENTRADA: "+str1)
   // str1 format should be dd/mm/yyyy. Separator can be anything e.g. / or -. It wont effect
 var mon1   = parseInt(str1.substring(0,2));
 var dt1  = parseInt(str1.substring(3,5));
@@ -112,10 +112,22 @@ var hora = parseInt(str1.substring(11,13));
 var minuto = parseInt(str1.substring(14,16));
 
 var date1 = new Date(yr1, mon1-1, dt1, hora, minuto);
-console.log("FECHA FORMATEADA")
-console.log("MES: "+date1.getMonth())
-console.log("DIA: "+date1.getDay())
-console.log("ANIO: "+date1.getYear())
 
 return date1;
+}
+function obtenerDatos(m){
+  $.ajax({
+    url: '/vistaPrincipal/getMaterias',
+    type: 'GET',
+    dataType : 'json',
+    data: {mes: m,
+    },
+    success: function(data) {
+      console.log(data)
+    },
+    error: function(e) {
+    //called when there is an error
+    //console.log(e.message);
+    }
+  });
 }

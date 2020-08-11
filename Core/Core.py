@@ -52,8 +52,16 @@ class Core:
     def registrarUsuario(usuario, contrasena, email):
         return str(IDatosEntrada.registrarUsuario(usuario, contrasena, email))
 
-    def getMaterias(usuario):
+    def getMaterias(usuario, mes):
         return [
-            {"nombre": "prueba1", "horaInicio": "10:20 PM", "horaFinal": "10:40 PM"},
-            {"nombre": "prueba2", "horaInicio": "10:40 PM", "horaFinal": "10:59 PM"},
+            {
+                "nombre": "prueba1",
+                "fechaInicio": "08/11/2020 10:20",
+                "fechaFinal": "08/11/2020 10:20",
+            },
+            {
+                "nombre": "prueba1",
+                "fechaInicio": "09/11/2020 10:20",
+                "fechaFinal": "09/11/2020 10:20",
+            },
         ]

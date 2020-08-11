@@ -188,11 +188,12 @@ class Gui:
         return jsonify(salida)
 
     @app.route("/vistaPrincipal/getMaterias")
-    def getMaterias(nombre=None):
+    def getMaterias(mes=None):
+
         try:
             usuario = session["usuario"]
-            resultado = IUsuarioSalida.getMaterias(usuario)
-
+            mes = request.args.get("mes")
+            resultado = IUsuarioSalida.getMaterias(usuario, mes)
             return jsonify(resultado)
         except:
             return jsonify("Sin iniciar sesion")
