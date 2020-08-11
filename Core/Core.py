@@ -55,13 +55,13 @@ class Core:
     def getMaterias(usuario, mes):
         return [
             {
-                "nombre": "prueba1",
+                "nombre": "dia11",
                 "fechaInicio": "08/11/2020 10:20",
                 "fechaFinal": "08/11/2020 10:20",
             },
             {
-                "nombre": "prueba1",
-                "fechaInicio": "09/11/2020 10:20",
-                "fechaFinal": "09/11/2020 10:20",
+                "nombre": "dia10",
+                "fechaInicio": "08/10/2020 10:20",
+                "fechaFinal": "08/10/2020 10:20",
             },
         ]

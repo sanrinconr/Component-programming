@@ -85,8 +85,7 @@ $(function(){
       type: 'GET',
       dataType : 'json',
       success: function(data) {
-        alert(JSON.stringify(data))
-        console.log(data)
+        __actualizarCalendario(data,mes)
       },
       error: function(e) {
       //called when there is an error
@@ -104,16 +103,27 @@ function eliminarSesionBarra(){
 
 }
 function parseDate(str1){
+  console.log("FECHAENTRADA"+str1)
   // str1 format should be dd/mm/yyyy. Separator can be anything e.g. / or -. It wont effect
 var mon1   = parseInt(str1.substring(0,2));
 var dt1  = parseInt(str1.substring(3,5));
 var yr1   = parseInt(str1.substring(6,10));
 var hora = parseInt(str1.substring(11,13));
 var minuto = parseInt(str1.substring(14,16));
+console.log("FECHASALIDA")
+console.log("mes: "+mon1)
+console.log("dia: "+dt1)
+console.log("anio: "+yr1)
 
 var date1 = new Date(yr1, mon1-1, dt1, hora, minuto);
 
 return date1;
+}
+function getDia(str1){
+  // str1 format should be dd/mm/yyyy. Separator can be anything e.g. / or -. It wont effect
+var dt1  = parseInt(str1.substring(3,5));
+
+return dt1;
 }
 function obtenerDatos(m){
   $.ajax({
@@ -123,11 +133,23 @@ function obtenerDatos(m){
     data: {mes: m,
     },
     success: function(data) {
+      console.log(data.length)
       console.log(data)
+      console.log(data[0].fechaInicio)
+      for (var i = 0 ; i<data.length ; i++){
+        graficar(data[i].nombre, getDia(data[i].fechaInicio))
+      }
     },
     error: function(e) {
     //called when there is an error
     //console.log(e.message);
+    }
+  });
+}
+function graficar(nombre,dia){
+  $('.dia').each(function(){
+    if($(this).find('.numero').find("span").text() == dia.toString()){
+      $(this).find('.eventos').append(nombre)
     }
   });
 }
