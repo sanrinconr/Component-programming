@@ -43,3 +43,7 @@ Y luego se vuelve a ejecutar el orquestador el cual posee ya el componente Gui a
 python3 Orquestador.py
 ```
 
+### Presentacion
+Adicionalmente se realizo una presentacion para mayor claridad del proyecto
+[Presentacion Genial.ly](https://view.genial.ly/5f329d8e5962040d95eb12ec/presentation-gestordeeventos)
+
