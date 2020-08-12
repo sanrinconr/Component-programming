@@ -6,11 +6,19 @@ from Cargador import Cargador
 
 class ISalida:
     def desplegarInformacion():
-        Cargador.getInstancia("Gui").desplegarInformacion()
+        clase = Cargador.getInstancia("Gui")
+        if clase != None:
+            clase.desplegarInformacion()
+        else:
+            pass
 
     def iniciarGui():
-        Cargador.getInstancia("Gui").extraerNecesarios()
-        Cargador.getInstancia("Gui").iniciar()
+        clase = Cargador.getInstancia("Gui")
+        if clase != None:
+            clase.extraerNecesarios()
+            clase.iniciar()
+        else:
+            pass
 
     def existeInstancia():
         if Cargador.getInstancia("Gui") != None:
