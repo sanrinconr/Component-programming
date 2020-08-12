@@ -7,8 +7,11 @@ from Cargador import Cargador
 class IDatosEntrada:
     def registrarUsuario(usuario, contrasena, email):
         clase = Cargador.getInstancia("baseDatos")
-        instancia = clase()
-        return instancia.ingresar_Estudiante(usuario, "NA", "NA", contrasena, email)
+        if clase != None:
+            instancia = clase()
+            return instancia.ingresar_Estudiante(usuario, "NA", "NA", contrasena, email)
+        else:
+            return None
 
     def agregarMateria(
         nombre,
@@ -28,39 +31,48 @@ class IDatosEntrada:
         nombreUsuario,
     ):
         clase = Cargador.getInstancia("baseDatos")
-        instancia = clase()
+        if clase != None:
+            instancia = clase()
 
-        return instancia.ingresar_actividad(
-            "n",
-            nombre,
-            descripcion,
-            int(anioInicio),
-            int(mesInicio),
-            int(diaInicio),
-            int(horaInicio),
-            int(minutoInicio),
-            int(segundoInicio),
-            int(anioFinal),
-            int(mesFinal),
-            int(diaFinal),
-            int(horaFinal),
-            int(minutoFinal),
-            int(segundoFinal),
-            nombreUsuario,
-        )
+            return instancia.ingresar_actividad(
+                "n",
+                nombre,
+                descripcion,
+                int(anioInicio),
+                int(mesInicio),
+                int(diaInicio),
+                int(horaInicio),
+                int(minutoInicio),
+                int(segundoInicio),
+                int(anioFinal),
+                int(mesFinal),
+                int(diaFinal),
+                int(horaFinal),
+                int(minutoFinal),
+                int(segundoFinal),
+                nombreUsuario,
+            )
+        else:
+            return None
 
     def getMaterias(usuario, mes):
         clase = Cargador.getInstancia("baseDatos")
-        instancia = clase()
-        print("USUARIO:" + usuario)
-        print("MES:" + mes)
-        lista = instancia.obtener_actividades_mes(mes, usuario)
-        print(lista)
-        return lista
+        if clase != None:
+            instancia = clase()
+            print("USUARIO:" + usuario)
+            print("MES:" + mes)
+            lista = instancia.obtener_actividades_mes(mes, usuario)
+            print(lista)
+            return lista
+        else:
+            return None
 
     def eliminarMateria(usuario, nombre):
         clase = Cargador.getInstancia("baseDatos")
-        instancia = clase()
-        lista = instancia.borrar_actividad(usuario, nombre)
-        print(lista)
-        return lista
+        if clase != None:
+            instancia = clase()
+            lista = instancia.borrar_actividad(usuario, nombre)
+            print(lista)
+            return lista
+        else:
+            return None
