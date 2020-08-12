@@ -12,9 +12,6 @@ class baseDatos:
 
         self.cursor = self.connection.cursor()
 
-    def test(self):
-        return "wef"
-
     # Seleccionar un Estudiante
     def select_user(self, id):
         sql = "SELECT idEstudiante,Nombre FROM Estudiante WHERE idEstudiante='{}'".format(

@@ -18,13 +18,13 @@ $(function(){
             descripcion:$("#inputDescripcionMateria").val(),
             anioInicio:fechaInicio.getYear()+1900,
             mesInicio:fechaInicio.getMonth()+1,
-            diaInicio:fechaInicio.getDay(),
+            diaInicio:fechaInicio.getDate(),
             horaInicio:fechaInicio.getHours(),
             minutoInicio:fechaInicio.getMinutes(),
             segundoInicio:fechaInicio.getSeconds(),
             anioFinal:fechaFinal.getYear()+1900,
             mesFinal:fechaFinal.getMonth()+1,
-            diaFinal:fechaFinal.getDay(),
+            diaFinal:fechaFinal.getDate(),
             horaFinal:fechaFinal.getHours(),
             minutoFinal:fechaFinal.getMinutes(),
             segundoFinal:fechaFinal.getSeconds(),
@@ -134,11 +134,10 @@ function obtenerDatos(m){
     },
     success: function(data) {
       console.log(data)
-      console.log(data[0].fechaInicio)
 
-    /*  for (var i = 0 ; i<data.length ; i++){
-        graficar(data[i].nombre, getDia(data[i].fechaInicio))
-      }*/
+     for (var i = 0 ; i<data.length ; i++){
+        graficar(data[i].nombre, sqlToJs(data[i].fechaInicio).getDate())
+      }
     },
     error: function(e) {
     //called when there is an error

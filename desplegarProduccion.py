@@ -2,3 +2,4 @@ import desplieges.produccion.desplegarOrquestador
 import desplieges.produccion.desplegarCore
 import desplieges.produccion.desplegarGui
 import desplieges.produccion.desplegarApi
+import desplieges.produccion.desplegarBaseDatos

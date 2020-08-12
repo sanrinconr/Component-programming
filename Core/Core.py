@@ -53,22 +53,22 @@ class Core:
         return str(IDatosEntrada.registrarUsuario(usuario, contrasena, email))
 
     def getMaterias(usuario, mes):
-        print(usuario)
-        print(mes)
+        # print(usuario)
+        # print(mes)
         lista = IDatosEntrada.getMaterias(mes, usuario)
 
         return lista
         """
         return [
             {
-                "nombre": "dia11",
-                "fechaInicio": "08/11/2020 10:20",
-                "fechaFinal": "08/11/2020 10:20",
+                "nombre": "Hacer mercado",
+                "fechaInicio": "08/14/2020 10:20",
+                "fechaFinal": "08/14/2020 10:20",
             },
             {
-                "nombre": "dia10",
-                "fechaInicio": "08/10/2020 10:20",
-                "fechaFinal": "08/10/2020 10:20",
+                "nombre": "Pagar factura",
+                "fechaInicio": "08/15/2020 10:20",
+                "fechaFinal": "08/15/2020 10:20",
             },
         ]
         """
