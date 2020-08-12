@@ -43,8 +43,8 @@ class IUsuarioSalida:
             nombreUsuario,
         )
 
-    def eliminarMateria(nombre):
-        return Cargador.getInstancia("Orquestador").eliminarMateria(nombre)
+    def eliminarMateria(usuario, nombre):
+        return Cargador.getInstancia("Orquestador").eliminarMateria(usuario, nombre)
 
     def registrarUsuario(usuario, contrasena, email):
         return Cargador.getInstancia("Orquestador").registrarUsuario(

@@ -142,14 +142,16 @@ class baseDatos:
         return salida
 
     # Borrar actividad
-    def borrar_actividad(self, idActividad):
-        sql = "DELETE FROM Actividad WHERE idActividad={}".format(idActividad)
+    def borrar_actividad(self, usuario, nombre):
+        sql = "DELETE FROM Actividad WHERE idEstudiante='{}' and Nombre='{}'".format(
+            usuario, nombre
+        )
         try:
             self.cursor.execute(sql)
             self.connection.commit()
+            return str(True)
         except Exception as e:
-            print(e)
-            raise
+            return str(e)
 
     def cambiar_hora_actividad(
         self,

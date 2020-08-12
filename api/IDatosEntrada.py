@@ -57,3 +57,10 @@ class IDatosEntrada:
         lista = instancia.obtener_actividades_mes(mes, usuario)
         print(lista)
         return lista
+
+    def eliminarMateria(usuario, nombre):
+        clase = Cargador.getInstancia("baseDatos")
+        instancia = clase()
+        lista = instancia.borrar_actividad(usuario, nombre)
+        print(lista)
+        return lista

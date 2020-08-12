@@ -46,8 +46,8 @@ class Core:
             segundoFinal,
         )
 
-    def eliminarMateria(nombre):
-        return "No eliminada, no hay base de datos"
+    def eliminarMateria(usuario, nombre):
+        return str(IDatosEntrada.eliminarMateria(usuario, nombre))
 
     def registrarUsuario(usuario, contrasena, email):
         return str(IDatosEntrada.registrarUsuario(usuario, contrasena, email))

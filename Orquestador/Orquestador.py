@@ -52,8 +52,8 @@ class Orquestador:
             nombreUsuario,
         )
 
-    def eliminarMateria(nombre):
-        return IUsuarioEntrada.eliminarMateria(nombre)
+    def eliminarMateria(usuario, nombre):
+        return IUsuarioEntrada.eliminarMateria(usuario, nombre)
 
     def registrarUsuario(usuario, contrasena, email):
         return IUsuarioEntrada.registrarUsuario(usuario, contrasena, email)

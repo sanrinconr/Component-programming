@@ -31,6 +31,10 @@ $(function(){
             },
       success: function(data) {
         console.log(data)
+        if(data.agregada == "True"){
+          alert("Actividad agregada!")
+          location.reload()
+        }
       },
       error: function(e) {
       //called when there is an error
@@ -56,36 +60,21 @@ $(function(){
       }
     });
   });
-  $( "#btnSubirMateria" ).click(function() {
-    $.ajax({
-      url: '/vistaPrincipal/agregarMateria',
-      type: 'GET',
-      data: {nombre: $("#inputNombreMateria").val(),
-            descripcion:$("#inputDescripcionMateria").val(),
-            horaInicio:$("#inputHoraInicio").val(),
-            horaFinal:$("#inputHoraFinal").val(),
-            color:$("#inputColor").children("option:selected").val(),
-            },
-      success: function(data) {
-      //called when successful
-      alert(data.nombre+"\n"+data.descripcion +"\n" +data.agregada+"\n"+data.color)
-      //Dependiendo de lo que salga aqui toca redireccionar o no
 
-      },
-      error: function(e) {
-      //called when there is an error
-      //console.log(e.message);
-      }
-    });
-  });
-
-  $( "#btnGetMaterias" ).click(function() {
+  eliminarSesionBarra()
+  $( "#btnEliminarEvento" ).click(function() {
     $.ajax({
-      url: '/vistaPrincipal/getMaterias',
+      url: '/vistaPrincipal/eliminarMateria',
       type: 'GET',
       dataType : 'json',
+      data: {nombre: $("#inputNombreMateriaEliminar").val(),
+            },
       success: function(data) {
-        __actualizarCalendario(data,mes)
+        console.log(data)
+        if(data.eliminada == "True"){
+          alert("Actividad eliminada!")
+          location.reload();
+        }
       },
       error: function(e) {
       //called when there is an error
@@ -93,8 +82,6 @@ $(function(){
       }
     });
   });
-  eliminarSesionBarra()
-
 });
 
 function eliminarSesionBarra(){
@@ -110,10 +97,7 @@ var dt1  = parseInt(str1.substring(3,5));
 var yr1   = parseInt(str1.substring(6,10));
 var hora = parseInt(str1.substring(11,13));
 var minuto = parseInt(str1.substring(14,16));
-console.log("FECHASALIDA")
-console.log("mes: "+mon1)
-console.log("dia: "+dt1)
-console.log("anio: "+yr1)
+
 
 var date1 = new Date(yr1, mon1-1, dt1, hora, minuto);
 
@@ -133,8 +117,6 @@ function obtenerDatos(m){
     data: {mes: m,
     },
     success: function(data) {
-      console.log(data)
-
      for (var i = 0 ; i<data.length ; i++){
         graficar(data[i].nombre, sqlToJs(data[i].fechaInicio).getDate())
       }
@@ -158,11 +140,6 @@ function sqlToJs(fechaSql) {
   var yr1   = parseInt(fechaSql.substring(0,5));
   var hora = parseInt(fechaSql.substring(11,13));
   var minuto = parseInt(fechaSql.substring(14,16));
-  console.log("MES"+mon1)
-  console.log("dia"+dt1)
-  console.log("anio"+yr1)
-  console.log("hora"+hora)
-  console.log("min"+minuto)
 
   return new Date(yr1, mon1-1, dt1, hora, minuto);
 

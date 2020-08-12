@@ -181,7 +181,8 @@ class Gui:
     @app.route("/vistaPrincipal/eliminarMateria")
     def eliminarMateria(nombre=None):
         nombre = request.args.get("nombre")
-        seElimino = str(IUsuarioSalida.eliminarMateria(nombre))
+        usuario = session["usuario"]
+        seElimino = str(IUsuarioSalida.eliminarMateria(usuario, nombre))
         salida = {
             "nombre": nombre,
             "eliminada": seElimino,
