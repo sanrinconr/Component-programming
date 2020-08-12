@@ -4,6 +4,14 @@
 - Juan David Montes 20172020141
 - Josué Nuñez  20172020071
 
+## Requisitos
+Se debe tener instalado el framework flask (conexion python con web) y el framework pymysql (conexion con la db). Para instalarlos:
+```sh
+pip install flask
+```
+```sh
+pip install pymysql
+```
 ## Como ejecutar
 Para ejecutar el programa se deben crear todos lo binarios, esto se logra ejecutando el archivo despliegeProduccion.py el cual generara la carpeta Produccion/
 ```sh
